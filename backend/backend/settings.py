@@ -84,11 +84,11 @@ import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'marketplace',
-        'USER': 'root',
-        'PASSWORD': 'Yueenklaris1@',
-        'HOST': '127.0.0.1',
-        'PORT': '3306'      # Default MySQL port
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT')      
     }
 }
 
