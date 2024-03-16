@@ -1,0 +1,19 @@
+{
+  "name": "my-express-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "source-map-resolve": "^0.6.0",
+    "source-map-url": "^0.4.1",
+    "urix": "^0.1.0"
+  }
+}
