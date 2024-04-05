@@ -18,7 +18,7 @@ function SearchComponent() {
       navigate('/search-results', { state: { searchResults: response.data } });
       console.log(response.data)
     } catch (error) {
-      console.error('Error searching for products:', error);
+      console.error('Error searching for products:', error)
     }
   };
 
