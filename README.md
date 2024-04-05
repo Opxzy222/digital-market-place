@@ -8,6 +8,8 @@
 
 ## Introduction
 Welcome to my marketplace website! This platform allows users to buy and sell a variety of products, connecting buyers and sellers in a seamless and efficient manner.
+
+## Features
 User authentication and account management
 Browse and search for products
 View product details, including images, descriptions, prices and sellers's contact
