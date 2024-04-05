@@ -15,7 +15,7 @@ function CategoryList() {
     axios.get('http://127.0.0.1:8000/category-product-count/')
       .then(response => {
         const categoryArray = Object.values(response.data);
-        setCategories(categoryArray);
+        setCategories(categoryArray)
       })
       .catch(error => {
         console.error('Error fetching categories:', error);

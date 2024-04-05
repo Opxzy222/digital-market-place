@@ -10,7 +10,7 @@ function Product({ image, title, price }) {
       <h3>{title}</h3>
       <p> ₦{price}</p>
     </div>
-  );
+  )
 }
 
 export default Product;

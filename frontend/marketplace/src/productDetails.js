@@ -15,8 +15,6 @@ function ProductDetails() {
     axios.post('http://localhost:8000/product/', formData)
       .then(response => {
         setProduct(response.data);
-        console.log(response.data, 'gagagag')
-        console.log(product, 'ofofo')
        
       })
       .catch(error => {
