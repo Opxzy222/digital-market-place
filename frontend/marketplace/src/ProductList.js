@@ -13,7 +13,7 @@ function ProductsList() {
     axios.get('http://localhost:8000/display-products/')
       .then(response => {
         console.log('Response data:', response.data); // Log the response data
-        setProducts(response.data.products);
+        setProducts(response.data.products)
       })
       .catch(error => {
         console.error('Error fetching products:', error);
