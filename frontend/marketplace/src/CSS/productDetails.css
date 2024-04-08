@@ -1,0 +1,46 @@
+.product-container {
+    height: 300px;
+    overflow: visible;
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: 180px;
+    
+}
+
+.product-details {
+    width: 50%;
+    width: 70%; 
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 500px;
+    padding-bottom: 300px;
+    height: 300px
+}
+
+.product-details img {
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+   
+}
+
+.description {
+    font-weight: bold;
+}
+
+.content {
+    margin-top: -1px;
+}
+
+.price {
+    margin-top: 15px;
+    font-weight: bold; 
+}
+
+.contact {
+    text-align: left;
+    font-weight: bold;
+    margin-left: 200px;
+}

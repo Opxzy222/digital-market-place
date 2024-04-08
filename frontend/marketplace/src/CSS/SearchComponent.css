@@ -1,70 +1,74 @@
+@import '~normalize.css';
+
 .display-container {
-    background-color: #0E2F56;
-    width: 73%; 
-    margin: 0 auto;
-    margin-right: 53px;
-    padding-bottom: 102px;
-    margin-top: 5px;
+  background-color: #0E2F56;
+  width: 73%; 
+  margin: 0 auto;
+  margin-right: 53px;
+  padding-bottom: 102px;
+  margin-top: 5px;
 }
-  
-  .search-input {
-    padding: 8px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-right: 2px;
-    font-size: 18px;
-    outline: invert;
-    margin-left: 10px;
-    margin-top: 20px;
-    width: 25cap
-  }
 
-  .search-container {
-    margin-right: 500px;
-  }
-  
-  .search-button {
-    padding: 10px 20px;
-    background-color: silver;
-    color: black;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .search-button:hover {
-    background-color: #0056b3;
-  }
+.search-input {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-right: 2px;
+  font-size: 18px;
+  outline: invert;
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 25cap
+}
 
-  .image-container {
-    background-image: url('../Image/logo4.jpg');
-    background-color: white;
-    padding: 20px; 
-    margin: 0 auto;
-    width: 6cap; /* Set a fixed width */
-    height: 60px; /* Set a fixed height */
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the image */
-    margin-right: 80px;
-    margin-top: -40px;
-  }
+.search-container {
+  margin-right: 500px;
+}
 
-  .button-below-image {
-    display: block;
-    margin-top: 0px;
-    margin-left: 798px;
-    width: 108px;
-    background-color: orange;
-    border: none;
-    border-radius: 0;
-    color: black;
-    font-weight: bold;
-  }
+.search-button {
+  padding: 10px 20px;
+  background-color: silver;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  .button-link {
-    text-decoration: none;
-  }
-  
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.sell-image-container {
+  display: inline-block;
+  margin-left: 600px
+}
+
+.image-container {
+  background-image: url('../Image/logo4.jpg');
+  background-color: white;
+  padding: 20px; 
+  width: 6cap; /* Set a fixed width */
+  height: 60px; /* Set a fixed height */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  margin-top: -40px;
+}
+
+.button-below-image {
+  display: block;
+  margin-top: 0px;
+  width: 108px;
+  background-color: orange;
+  border: none;
+  border-radius: 0;
+  color: black;
+  font-weight: bold;
+  padding: 10px
+}
+
+.button-link {
+  text-decoration: none;
+}

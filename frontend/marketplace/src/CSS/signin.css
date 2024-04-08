@@ -11,10 +11,11 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding-right: 40px;
-    padding-left: 40px;
-    padding-bottom: 10%;
-    padding-top: 40px;
+    padding-left: 20px;
+    padding-bottom: 3%;
+    padding-top: 20px;
     width: 300px;
+    margin-top: -120px;
   }
   
   h2 {
@@ -37,11 +38,11 @@
   input[type='password'] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid silver;
     border-radius: 5px;
   }
   
-  button {
+  .signin-button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -49,9 +50,34 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    width: 320px;
   }
   
   button:hover {
     background-color: #0056b3;
   }
   
+  .change-password {
+    margin-top: 12px;
+    
+  }
+
+  .change-pass-Link {
+    text-decoration: none;
+    color: black
+  }
+
+  .signup-container {
+    display: flex; /* Use flexbox */
+    align-items: center;
+    color: black;
+    margin-top: 45px;
+    
+  }
+
+  .signup-Link {
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    color: black
+  }

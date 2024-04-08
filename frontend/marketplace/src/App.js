@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import CategoryList from './Homepage';
+import CategoryList from './categoryList';
 import ProductList from './ProductList';
 import SignInPage from './SingInPage';
 import SearchResultsPage from './SearchResult';
 import SearchComponent from './SearchComponent';
 import ProductForm from './CreateAd';
 import ProductDetails from './productDetails';
+import MyAdverts from './MyAds';
 import { Helmet } from 'react-helmet';
 import './CSS/App.css';
 
@@ -15,7 +16,7 @@ function App() {
   const [showFooter, setShowFooter] = useState(false);
 
   useEffect(() => {
-    // Check if the session token exists in local storage
+    // Check if the session token exists in local storage.
     const sessionToken = localStorage.getItem('sessionToken');
     if (sessionToken) {
       setIsAuthenticated(true);
@@ -30,6 +31,15 @@ function App() {
   
   const handleSignIn = () => {
     setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    // Clear the session token from local storage
+    localStorage.removeItem('sessionToken');
+    localStorage.removeItem('user_id');
+    // Redirect the user to the login page
+    window.location.href = '/'; // Redirect using window.location
+    console.log('logout successful')
   };
 
   const handleScroll = () => {
@@ -54,23 +64,22 @@ function App() {
           {/* Conditionally render the sign-in link or other links */}
           {isAuthenticated ? (
             <>
-              <Link to="/profile" className="header-link">Profile</Link>
-              <Link to="/logout" className="header-link">Logout</Link>
+              <Link to="/my-ads" className="header-link">My ads</Link>
+              <button className="header-link" onClick={handleLogout}>Logout</button>
             </>
           ) : (
-            <Link to='/signin'>Sign in</Link>
+            <Link to='/signin' className='header-link'>Sign in</Link>
           )}
         </header>
         <div>
         </div>
         <Routes>
           <Route path="/" element={<Homepage isAuthenticated={isAuthenticated} />} />
-          {/* Use a route for the sign-in page */}
           <Route path="/signin" element={<SignInPage onSignIn={handleSignIn} />} />
-          {/* Use a route for the homepage */}
           <Route path="/Homepage" element={<Homepage isAuthenticated={isAuthenticated} />} />
           <Route path="/search-results" element={<SearchResultsPage />} />
-          <Route path="/create-ad" element={<ProductForm isAuthenticated={isAuthenticated} />} />
+          <Route path="Homepage/create-ad" element={<ProductForm isAuthenticated={isAuthenticated} />} />
+          <Route path="my-ads" element={<MyAdverts isAuthenticated={isAuthenticated} />} />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
         
@@ -84,7 +93,7 @@ function Homepage({ isAuthenticated }) {
     <div className='homepage-container'>
       <div >
         <div>
-          <SearchComponent />
+        <SearchComponent isAuthenticated={isAuthenticated} />
           </div>
       </div>
       <div className='cat'>

@@ -1,6 +1,6 @@
 .categoryList {
     background-color: white;
-    margin-top: -261px; /* Adjust the margin-top to create space between category list and subcategory list */
+    margin-top: -260px; /* Adjust the margin-top to create space between category list and subcategory list */
     padding-bottom: 140px;
     padding-right: 40px;
     text-align: left;
@@ -13,10 +13,10 @@
     background-color: white;
     padding-right: 40px;
     padding-top: 20px;
-    padding-bottom: 158px;
+    padding-bottom: 140px;
     text-align: left;
     margin-left: -6px;
-    margin-top: -261px;
+    margin-top: -260px;
     z-index: 1;
     position: absolute; /* Position subcategory list absolutely */
     left: 100%; /* Position subcategory list to the right of the category list */

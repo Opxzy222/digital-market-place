@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom'; 
 import './CSS/SearchComponent.css'; // Import the CSS file
 
-function SearchComponent() {
+function SearchComponent({ isAuthenticated }) {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ function SearchComponent() {
   };
 
   return (
-    <div className='display-container'>
+  <div className='display-container'>
     <div className="search-container">
       <input
         type="text"
@@ -34,15 +34,22 @@ function SearchComponent() {
       />
       <button onClick={handleSearch} className="search-button">Search</button>
       </div>
-      <div >
+    <div className='sell-image-container' >
       <div className='image-container'>
         
       </div>
-      <Link to='create-ad' className='button-link'>
-        <button className="button-below-image">SELL</button>
-      </Link>
+       {/* Conditionally render the link based on authentication */}
+       {isAuthenticated ? (
+          <Link to='create-ad' className='button-link'>
+            <button className="button-below-image">SELL</button>
+          </Link>
+        ) : (
+          <Link to='/signin' className='button-link'>
+            <button className="button-below-image">SELL</button>
+          </Link>
+        )}
+      </div>
     </div>
-  </div>
 );
 }
 

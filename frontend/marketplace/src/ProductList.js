@@ -31,7 +31,7 @@ function ProductsList() {
       <h3 className='heading'>Trending ads</h3>
       <div className="products-list">
         {products.map(product => (
-           <Link to={`/product/${product.id}`}>
+           <Link  className='link' to={`/product/${product.id}`}>
             <Product
             key={product.id}
             image={product.image} 
