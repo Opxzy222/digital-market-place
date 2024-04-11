@@ -1,5 +1,4 @@
 # Market place website
- ALX FINAL PROJECT
 
 ## Table of Contents
 - [Introduction](#introduction)
