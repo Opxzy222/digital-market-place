@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import './CSS/SearchResults.css'; // Import CSS file for styling
+import './CSS/SearchResults.css'; 
+import { Link } from 'react-router-dom';
 
 function SearchResultsPage() {
   const location = useLocation();
@@ -14,10 +15,12 @@ function SearchResultsPage() {
       <div className="product-grid">
         {searchResults.map((product) => (
           <div key={product.id} className="product-item">
+            <Link to={`/product/${product.id}`}>
             <img src={'http://localhost:8000/' + product.image} alt={product.title} />
     
             <h3>{product.title}</h3>
             <p>Price: {product.price}</p>
+            </Link>
            
           </div>
         ))}

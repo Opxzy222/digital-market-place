@@ -12,8 +12,9 @@ class User(models.Model):
     email = models.CharField(max_length=250, null=False, unique=True)
     password = models.CharField(max_length=250, null=False)
     session_id = models.CharField(max_length=250, null=True)
+    phone_no = models.BigIntegerField(null=True, default='012456520')
     reset_token = models.CharField(max_length=250, null=True)
-    date_joined = models.CharField(max_length=100, default=timezone.now, editable=False)
+    date_joined = models.DateTimeField(default=timezone.now)
 
     @property
     def fullname(self):
@@ -27,7 +28,7 @@ class User(models.Model):
 class Category(MPTTModel):
     #Category model
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=100, default='Default Category Name')
+    name = models.CharField(max_length=100, default='Default Category Name', unique=True)
     parent = TreeForeignKey('self', on_delete=models.CASCADE,
                                null=True, blank=True,
                                  related_name='children')
@@ -62,17 +63,18 @@ class Category(MPTTModel):
             total_count += subcategory.get_all_subcategory_product_count()
     
         return total_count
-    
+
 class Product(models.Model):
     title = models.TextField(max_length=100, default='title')
     description = models.TextField()
     price = models.DecimalField(decimal_places=2, max_digits=10)
     negotiable = models.BooleanField(null=True)
-    seller = models.ForeignKey(User, on_delete=models.CASCADE,
-                                related_name='seller_id', null=False)
     image = models.ImageField(upload_to='Image/Image',
                                null=False, default='product_image.jpg')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category_items')
+    seller = models.ForeignKey(User, on_delete=models.CASCADE,
+                                related_name='seller_id', null=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,
+                                  related_name='category_items')
     product_name = models.CharField(max_length=100, blank=True)
    
     def save(self, *args, **kwargs):
@@ -81,4 +83,19 @@ class Product(models.Model):
             self.product_name = self.category.name
 
         super().save(*args, **kwargs)
-    
+
+
+class Image(models.Model):
+    DEFAULT_PRODUCT_ID = 26  # You can change this default value as needed
+    DEFAULT_PRODUCT_NAME = "Default Product"
+
+    product = models.ForeignKey(
+        Product,
+        related_name='images',
+        on_delete=models.CASCADE,
+        default=DEFAULT_PRODUCT_ID  # Provide the default product ID directly
+    )
+    image_file = models.ImageField(upload_to='Image/Image', default='product_image.jpg')
+
+    def __str__(self):
+        return self.image_file.name

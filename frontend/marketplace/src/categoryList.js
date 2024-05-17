@@ -15,7 +15,7 @@ function CategoryList() {
     axios.get('http://127.0.0.1:8000/category-product-count/')
       .then(response => {
         const categoryArray = Object.values(response.data);
-        setCategories(categoryArray)
+        setCategories(categoryArray);
       })
       .catch(error => {
         console.error('Error fetching categories:', error);
@@ -42,12 +42,13 @@ function CategoryList() {
   };
 
   const handleMouseLeave = () => {
-    setHoveredCategoryId(null); // Reset hovered category
-    setHoveredSubcategoryId(null); // Reset hovered subcategory
+    setHoveredCategoryId(null); // Reset hovered category ID
+    setHoveredSubcategoryId(null); // Reset hovered subcategory ID
+    setSubcategories([]); // Clear subcategories
   };
 
   return (
-    <div className='category-container'>
+    <div className='category-container' onMouseLeave={handleMouseLeave}>
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
       </Helmet>
@@ -56,7 +57,6 @@ function CategoryList() {
           <li 
             key={category.id} 
             onMouseEnter={() => handleCategoryHover(category.id)} 
-            onMouseLeave={handleMouseLeave} // Add onMouseLeave event handler
             className={hoveredCategoryId === category.id ? 'hovered' : ''} // Add a class when hovered
           >
             <Link to={`/products?category=${encodeURIComponent(category.name)}`} className='product-name'>
@@ -67,11 +67,12 @@ function CategoryList() {
         ))}
       </ul>
       {subcategories.length > 0 && (
-        <ul className='subcategoryList' onMouseLeave={handleMouseLeave}>
+        <ul className='subcategoryList'>
           {subcategories.map(subcategory => (
             <li 
               key={subcategory.id} 
               onMouseEnter={() => handleSubcategoryHover(subcategory.id)}
+              onMouseLeave={() => setHoveredSubcategoryId(null)} // Reset hovered subcategory ID on leave
               className={hoveredSubcategoryId === subcategory.id ? 'hovered' : ''} // Add a class when hovered
             >
               <Link to={`/subcategory/${subcategory.id}`} className='product-name'>
@@ -83,7 +84,7 @@ function CategoryList() {
         </ul>
       )}
       <div className='product-view'>
-        
+        {/* Add any additional content or components here */}
       </div>
     </div>
   );

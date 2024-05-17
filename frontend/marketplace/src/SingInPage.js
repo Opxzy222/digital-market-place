@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './CSS/signin.css';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate hook
+
 
 function SignInPage({ onSignIn }) {
   const [email, setEmail] = useState('');
@@ -20,14 +21,14 @@ function SignInPage({ onSignIn }) {
       // Check if the login was successful
       if (responseData.message === 'login successful') {
           // Retrieve the session_id from the response data
-          const sessionToken = responseData.session_id;
-          console.log(sessionToken);
+          const { user_id, session_id } = responseData
           // Save the session token to local storage
-          localStorage.setItem('sessionToken', sessionToken);
+          localStorage.setItem('sessionToken', {session_id})
+          localStorage.setItem('user_id', user_id);
           // Call the onSignIn function passed from App.js
           onSignIn();
-          // Navigate to the homepage after successful sign-in
-          navigate('/Homepage');
+          //Navigate to the homepage after successful sign-in
+          navigate('/Homepage', { state: { user_id } });
       } else {
           // Handle login failure
           console.error('Login failed:', responseData.message);
@@ -51,8 +52,15 @@ function SignInPage({ onSignIn }) {
             <label htmlFor='password'>Password</label>
             <input type='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
-          <button type='submit'>Sign In</button>
+          <button type='submit' className='signin-button'>Sign In</button>
         </form>
+        <div className='change-password'>
+          <Link className='change-pass-Link'>forgot password?</Link>
+        </div>
+        <div className='signup-container'>
+          <p>don't have an account yet?</p>
+          <Link className='signup-Link'>Sign up</Link>
+        </div>
       </div>
     </div>
   );

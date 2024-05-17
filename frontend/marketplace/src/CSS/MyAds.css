@@ -1,0 +1,49 @@
+.my-adverts-container {
+    max-width: 1200px; /* Set maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding around the container */
+    max-height: 200px; /* Set maximum height for the container */
+  }
+  
+  
+  .product-list {
+    margin-top: 20px; /* Add space above the product list */
+  }
+  
+  .products-container {
+    display: grid; /* Use CSS Grid for product layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    gap: 10px; /* Add smaller gap between grid items */
+  }
+  
+  .product {
+    background-color: #f9f9f9; /* Background color for each product */
+    border-radius: 8px; /* Rounded corners for product container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    width: 100%; /* Set width to fill grid cell */
+    display: flex; /* Use flexbox to align image and details */
+    flex-direction: column; /* Stack image and details vertically */
+    padding: 10px; /* Add padding inside each product container */
+  }
+  
+  .product img {
+    width: 100%; /* Make the image fill the container */
+    border-radius: 8px 8px 0 0; /* Rounded corners for top of product image */
+  }
+  
+  .product-details {
+    padding: 10px; /* Add padding inside each product container */
+  }
+  
+  .product-details h3 {
+    margin-top: 0; /* Remove default margin for the heading */
+  }
+  
+  .product-details p {
+    margin: 5px 0; /* Add smaller margin to paragraphs */
+  }
+  
+  .product-details p:last-child {
+    margin-bottom: 0; /* Remove bottom margin for last paragraph */
+  }
+  
