@@ -1,16 +1,18 @@
 .product-form-container {
-  background-color: white;
+  background-color: #F1F1F1;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 55%;
   margin: auto;
+  margin-top: 70px;
 }
 
 .product-form {
   display: flex;
   flex-direction: column;
   width: 55%;
+  margin-left: 100px;
 }
 
 .form-group {
@@ -23,10 +25,33 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  height: 50px;
+}
+
+input {
+  width: 2008px
 }
 
 input[type="file"] {
   margin-top: 5px;
+}
+
+.drop-zone-image {
+  border: 2px dashed #cccccc;
+  padding: 20px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+
+.drop-zone-image p {
+  font-size: 50px;
+  margin-top: -10px;
+}
+
+.drop-zone-image:hover {
+  border-color: black;
 }
 
 .create-ad-submit {
@@ -36,8 +61,38 @@ input[type="file"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 30px;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+.image-list {
+  display: flex;
+}
+
+.image-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 15px;
+  border: 1px solid silver;
+}
+
+.img-select {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
+ 
+}
+
+.form-control-file {
+  margin-left: 30px;
+  margin-right: -60px;
+}
+
+.form-control-files {
+  margin-bottom: 10px;
+  margin-left: -52px;
 }

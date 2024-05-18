@@ -23,7 +23,8 @@ from .views import (CreateUserView, LoginView, LogoutView,
                      GetResetTokenView, UpdatePasswordView, 
                      CreateProductView, CategoriesDropDownOptionsView,
                      SubCategoriesView, ProductView, SubcategoriesCountView,
-                     DisplayProductView, SearchView, GetProductView)
+                     DisplayProductView, SearchView, GetProductView,
+                     GetUserProductView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,6 +41,7 @@ urlpatterns = [
     path('category-product-count/', ProductView.as_view(), name='product_count'),
     path('product-search/', SearchView.as_view(), name='product_search'),
     path('product/', GetProductView.as_view(), name='get_product'),
+    path('user-products/', GetUserProductView.as_view(), name='get_user_product'),
     path('subcategories-product-count/', SubcategoriesCountView.as_view(), 
          name='subcategories_product_count')
 ] 

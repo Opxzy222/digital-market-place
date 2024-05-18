@@ -5,8 +5,8 @@ from .models import Category
 
 class CategoryManager(models.Manager):
     def display_categories():
-        # Define the category IDs or category objects you want to display
-        category_ids_to_display = [6, 11, 5, 9, 2, 3, 4]  # Example category IDs
+        # Define the category IDs to display
+        category_ids_to_display = [1, 3, 4, 5, 7, 6, 8, 9, 10, 11, 12, 13, 14]
 
         # Query the categories from the database using the IDs
         categories_to_display = Category.objects.filter(id__in=category_ids_to_display)

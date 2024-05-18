@@ -15,7 +15,7 @@
     padding-bottom: 3%;
     padding-top: 20px;
     width: 300px;
-    margin-top: -120px;
+    margin-top: -50px;
   }
   
   h2 {
@@ -51,6 +51,7 @@
     font-size: 16px;
     cursor: pointer;
     width: 320px;
+    font-weight: bold;
   }
   
   button:hover {
@@ -67,7 +68,7 @@
     color: black
   }
 
-  .signup-container {
+  .signup-contain {
     display: flex; /* Use flexbox */
     align-items: center;
     color: black;

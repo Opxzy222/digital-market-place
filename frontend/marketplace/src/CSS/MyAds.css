@@ -3,20 +3,30 @@
     margin: 0 auto; /* Center the container horizontally */
     padding: 20px; /* Add padding around the container */
     max-height: 200px; /* Set maximum height for the container */
+    margin-top: -40px;
   }
   
   
   .product-list {
-    margin-top: 20px; /* Add space above the product list */
+    margin-top: 45px; /* Add space above the product list */
   }
   
   .products-container {
     display: grid; /* Use CSS Grid for product layout */
     grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
-    gap: 10px; /* Add smaller gap between grid items */
+    gap: 60px; /* Add smaller gap between grid items */
+    width: 250px;
+    margin-left: 230px;
+    background-color: #F4F7F7;
+    padding-right: 500px;
+    padding-top: 50px;
+    padding-left: 50px;
+    height: auto;
+    border-radius: 5px;
+    
   }
   
-  .product {
+  .products {
     background-color: #f9f9f9; /* Background color for each product */
     border-radius: 8px; /* Rounded corners for product container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
@@ -26,13 +36,14 @@
     padding: 10px; /* Add padding inside each product container */
   }
   
-  .product img {
+  .product-images {
     width: 100%; /* Make the image fill the container */
     border-radius: 8px 8px 0 0; /* Rounded corners for top of product image */
   }
   
-  .product-details {
-    padding: 10px; /* Add padding inside each product container */
+  .product-info {
+    padding: 10px; 
+    display: flex;
   }
   
   .product-details h3 {
@@ -45,5 +56,55 @@
   
   .product-details p:last-child {
     margin-bottom: 0; /* Remove bottom margin for last paragraph */
+  }
+
+  .show-ad {
+    background-color: blue;
+    margin-right: 15px;
+    width: 80px;
+    height: 20px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .show-ad p {
+    color: white;
+    margin: 4px;
+  }
+
+  .edit-ad {
+    background-color: green;
+    margin-right: 15px;
+    width: 80px;
+    height: 20px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .edit-ad p {
+    color: white;
+    margin: 4px;
+  }
+
+  .close-ad {
+    background-color: red;
+    width: 80px;
+    height: 20px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .close-ad p {
+    color: white;
+    margin: 4px;
   }
   
