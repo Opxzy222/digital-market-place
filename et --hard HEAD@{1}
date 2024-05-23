@@ -1,0 +1,16 @@
+[33m541bb6e[m[33m ([m[1;36mHEAD -> [m[1;32mrecovery-branch[m[33m)[m HEAD@{0}: reset: moving to HEAD^
+[33m62a0e19[m HEAD@{1}: commit: react app for frontend
+[33m541bb6e[m[33m ([m[1;36mHEAD -> [m[1;32mrecovery-branch[m[33m)[m HEAD@{2}: commit: Implement api's endpoint
+[33m550c895[m HEAD@{3}: commit: manage User model
+[33m1d7cbbf[m HEAD@{4}: commit: define urls path
+[33m9df4136[m HEAD@{5}: commit: django settings
+[33m6cc34ac[m HEAD@{6}: commit: manage Product model features
+[33m4ae21dd[m HEAD@{7}: commit: project models
+[33m87f690d[m HEAD@{8}: commit: manage Category model features
+[33m96fd6c4[m HEAD@{9}: commit: admin configuration
+[33me5b807f[m HEAD@{10}: commit: django setup
+[33m0266d23[m HEAD@{11}: commit: django setup
+[33mec2ab14[m HEAD@{12}: checkout: moving from main to recovery-branch
+[33m830aa16[m[33m ([m[1;32mmain[m[33m)[m HEAD@{13}: reset: moving to HEAD~1
+[33mec2ab14[m HEAD@{14}: commit: this file handles user management operations
+[33m830aa16[m[33m ([m[1;32mmain[m[33m)[m HEAD@{15}: commit (initial): django project setup

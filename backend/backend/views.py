@@ -51,10 +51,12 @@ class LoginView(View):
         password = request.POST.get('password')
 
         if auth.valid_login(email, password):
+            user = auth.find_user(email=email)
             session_id = auth.create_session(email)
             response_data = {
                 'message': 'login successful',
-                'session_id': session_id
+                'session_id': session_id,
+                'user_id': user.id
             }
             return JsonResponse(response_data, status=200)
         else:
@@ -117,19 +119,24 @@ class CreateProductView(View):
             user_id = request.POST.get('user_id')
             product_name = request.POST.get('title')
             description = request.POST.get('description')
-            image = request.FILES.get('image')
-            print(category_id, user_id, product_name, description, price, image)
+            image = request.FILES.get('display_image')
+            images = request.FILES.getlist('images')
+
+            print(category_id, user_id, product_name, description, price, image, images)
 
             # Ensure all required fields are present
-            if not all([product_name, description, price, category_id, user_id, image]):
-                print("All required fields must be provided")
+            if not all([product_name, description, price, category_id, user_id, image, images]):
+                return JsonResponse({'status': 'error',
+                                      'message': 'All required fields must be provided'},
+                                        status=400)
+
 
             # Create the product using the provided data
             product_manager = ProductManager()
             product_manager.create_product(product_name,
                                             description,
                                             price, category_id,
-                                            user_id, image)
+                                            user_id, image, images)
 
             # Return success response with product details
             return JsonResponse({'status': 'success', 
@@ -138,7 +145,8 @@ class CreateProductView(View):
 
         else:
         # Return HTTP 405 Method Not Allowed for other HTTP methods
-            return JsonResponse({'status': 'error', 'message': 'Method Not Allowed'}, status=405)
+            return JsonResponse({'status': 'error',
+                                  'message': 'Method Not Allowed'}, status=405)
         
 
 class CategoriesDropDownOptionsView(View):
@@ -261,8 +269,8 @@ class SearchView(View):
         serialized_products = product_manager.search_products_by_name(search_input)
 
         # Return the serialized products as JSON response
-        return JsonResponse(serialized_products, safe=False)
-    
+        return JsonResponse(serialized_products, safe=False) 
+
 
 class GetProductView(View):
     def dispatch(self, request, *args, **kwargs):
@@ -281,4 +289,27 @@ class GetProductView(View):
         product = product_manager.get_product_by_id(id)
 
         return JsonResponse({'product': product})
+    
+
+class GetUserProductView(View):
+    def dispatch(self, request, *args, **kwargs):
+        # Determine the HTTP method used in the request
+        if request.method == 'POST':
+            return self.perform_get_user_product(request, *args, **kwargs)
+        else:
+            # Handle other HTTP methods (GET, PUT, DELETE, etc.) here if needed
+            return JsonResponse({'error': 'Method not allowed'}, status=405)
+        
+    def perform_get_user_product(self, request: HttpRequest):
+        id = request.POST.get('id')
+        print(id)
+
+        product_manager = ProductManager()
+
+        product = product_manager.get_user_product_by_id(id)
+        print(product)
+
+        return JsonResponse({'product': product})
+    
+
 

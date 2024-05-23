@@ -1,0 +1,16 @@
+.thumbnail-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .thumbnail-item {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    margin-left: 5px;
+    border-radius: 7px;
+  }
+  
+  .remaining-thumbnails {
+    font-weight: bold;
+  }

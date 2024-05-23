@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User Form</title>
+</head>
+<body>
+    <h1>Create User</h1>
+    <form id="userForm">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br><br>
+        
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+        
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <button type="submit">Create User</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var formData = new FormData(this);
+            
+            axios.post('http://localhost:8000/create-user/', formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+                .then(function(response) {
+                    console.log('User created successfully:', response.data);
+                })
+                .catch(function(error) {
+                    console.error('Error creating user:', error);
+                });
+        });
+    </script>
+</body>
+</html>

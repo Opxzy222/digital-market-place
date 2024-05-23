@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  padding-bottom: 1200px
+
 }
 
 .App-logo {
@@ -14,18 +16,87 @@
 }
 
 .header-container {
-  background-color: #C4E4FF;
+  background-color: #ECECEB;
   flex-direction: row;
-  font-size: calc(8px + 2vmin);
-  padding: 15px;
+  padding: 10px;
   display: flex;
   justify-content: flex-end;
+  border-bottom: solid 1px black;
+  z-index: 1000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  width: 100%;
+  right: 0;
+  
+}
+
+.profile-link {
+  width: 30px;
+  margin-right: 70px;
+  height: 30px;
+  color: black
 }
 
 .header-link {
   margin-right: 20px; 
+  width: 25px;
+  color: black;
+  height: 25px;
+}
+
+.marketplace-logo {
+  align-self: flex-start;
+  width: 70px;
+  height: 40px;
+  color: black;
+  border-radius: 50%;
+  margin-left: -1900px;
+  background-color: white;
+  border: 1px solid black
+}
+
+.profile {
+  background-color: white;
+  position: fixed;
+  z-index: 1000;
+  display: block;
+  margin-left: 1200px;
+  width: 100px;
+  text-align: left;
+  height: 130px;
+  margin-top: 40px;
+  font-size: 17px;
+  border-radius: 5px;
+  padding-left: 40px;
+  gap: 50px
+}
+
+.profile-details {
+  cursor: pointer; 
+  margin-top: 10px;
+}
+
+.sign-in {
   text-decoration: none;
-  color: #3C2317;
+  color: black;
+  font-size: 19px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sign-in-container {
+  background-color: white;
+  margin-right: 50px;
+  padding: 5px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: 23px;
+  border: 1px solid black;
+  padding-top: 4px;
+  margin-top: 5px;
 }
 
 main {
@@ -34,6 +105,7 @@ main {
   height: '100vh';
   margin: 0px;
   padding: 0px;
+ 
 }
 
 .headings {
@@ -52,6 +124,8 @@ body {
   background-color: silver;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 html, body {
@@ -72,6 +146,10 @@ footer {
 
 .cat {
   display: flex;
+}
+
+.cat-advert {
+  display: block
 }
 
 .App-link {

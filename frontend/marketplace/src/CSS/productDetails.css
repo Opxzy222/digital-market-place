@@ -1,32 +1,61 @@
 .product-container {
-    height: 300px;
-    overflow: visible;
-    margin-bottom: 10px;
-    width: 70%;
-    margin-left: 180px;
-    
+    margin-top: 70px;
 }
 
-.product-details {
-    width: 50%;
-    width: 70%; 
+.product-sub-container {
+    width: 79%; 
     margin: 0 auto;
-    background-color: white;
+    background-color: #F1F3F4;
     margin-top: 5px;
     margin-bottom: 500px;
     padding-bottom: 300px;
-    height: 300px
+    height: 300px;
+    align-items: center;
+    display: flex;
+    border-radius: 5px;
 }
 
-.product-details img {
-    overflow: hidden;
-    height: 300px;
-    width: 300px;
+.product-details {
+    align-items: flex-start;
+    text-align: left;
+    width: 450px;
+    margin-top: 130px;
+
+}
+
+.img.thumbnail-container {
+    display: block;
+}
+
+.product-img-container {
+    height: 420px;
+    width: 450px;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    margin-top: 200px;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+.product-img-container .image-gallery {
+    max-width: 450px;
+    max-height: 400px; /* Ensure the gallery fills its container */
     object-fit: cover;
-   
+    margin-bottom: 50px;
+    margin-top: -45px;
 }
 
 .description {
+    display: flex;
+    gap: 10px;
+    border-bottom: solid 1px black;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.description p {
     font-weight: bold;
 }
 
@@ -34,13 +63,57 @@
     margin-top: -1px;
 }
 
-.price {
-    margin-top: 15px;
+.product-price {
     font-weight: bold; 
+    font-size: 30px;
+    margin-bottom: 40px;
+    border-top: solid 1px black;
+    border-bottom: solid 0.3px black;
+    padding: 15px;
+    margin-left: -10px;
 }
 
-.contact {
-    text-align: left;
-    font-weight: bold;
-    margin-left: 200px;
+.contact-name {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px
 }
+
+.contact-name p {
+    font-weight: bold;
+}
+
+.contact-details {
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.whatsapp-link {
+    background-color: #CCF6C8;
+    display: flex;
+    width: 170px;
+    padding: 4px;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+
+.contact-details img {
+    margin-top: 4px;
+    margin-right: 4px;
+    margin-left: 8px;
+}
+
+.contact-link {
+    background-color: #CCF6C8;
+    display: flex;
+    width: 140px;
+    padding: 4px;
+    border-radius: 5px;
+    border: solid 1px black;
+    cursor: pointer;
+}
+

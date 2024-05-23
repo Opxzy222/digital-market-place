@@ -1,12 +1,15 @@
 @import '~normalize.css';
 
 .display-container {
-  background-color: #0E2F56;
-  width: 73%; 
+  background-color: #00204A;
+  width: 80%; 
   margin: 0 auto;
   margin-right: 53px;
-  padding-bottom: 102px;
-  margin-top: 5px;
+  padding-bottom: 150px;
+  margin-top: 70px;
+  display: flex;
+  margin-left: 10px;
+  border-radius: 5px;
 }
 
 .search-input {
@@ -16,13 +19,14 @@
   margin-right: 2px;
   font-size: 18px;
   outline: invert;
-  margin-left: 10px;
-  margin-top: 20px;
-  width: 25cap
+  margin-left: 180px;
+  margin-top: 90px;
+  width: 300px
 }
 
 .search-container {
-  margin-right: 500px;
+  margin-right: 265px;
+  display: flex;
 }
 
 .search-button {
@@ -35,40 +39,56 @@
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  padding-top: 5px;
+  margin-top: 90px;
 }
 
 .search-button:hover {
-  background-color: #0056b3;
+  background-color: #2666CF;
 }
 
 .sell-image-container {
-  display: inline-block;
-  margin-left: 600px
-}
-
-.image-container {
-  background-image: url('../Image/logo4.jpg');
-  background-color: white;
-  padding: 20px; 
-  width: 6cap; /* Set a fixed width */
-  height: 60px; /* Set a fixed height */
-  background-size: cover; /* Cover the entire container */
-  background-position: center; /* Center the image */
-  margin-top: -40px;
+  margin-top: 5px;
+  
 }
 
 .button-below-image {
-  display: block;
-  margin-top: 0px;
   width: 108px;
   background-color: orange;
   border: none;
   border-radius: 0;
   color: black;
   font-weight: bold;
-  padding: 10px
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
 }
 
 .button-link {
   text-decoration: none;
+}
+
+.how-to-sell {
+  padding-right: 234px;
+  padding-left: 40px;
+  padding-top: 10px;
+  background-image: url('../Image/buy-sell2.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 30px;
+  margin-top: 70px;
+  height: 90%;
+  padding-bottom: 170px;
+  border-radius: 5px;
+  width: 20px
+}
+
+.full-container {
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .display-container {
+    width: 650px;
+  }
 }
