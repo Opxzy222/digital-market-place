@@ -1,0 +1,479 @@
+/* General Container Styling */
+.container {
+    max-width: 1200px;
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+.category-container {
+    display: block;
+}
+
+.category-container h3 {
+    color: blue;
+}
+
+/* Title and Headers */
+.shp-manager-title {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #333;
+    margin: 20px 0 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.section {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Split Container Styling */
+.split-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    padding-top: -20px;
+}
+
+/* Input Field Styling */
+.custom-product-input {
+    width: calc(100% - 150px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 10px; /* Adjusted for better spacing */
+}
+
+/* Buttons Styling */
+.button {
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-button {
+    background-color: #28a745;
+    margin-top: 10px; /* Adjusted for better spacing */
+}
+
+.add-button:hover {
+    background-color: #218838;
+}
+
+.submit-button {
+    background-color: #007bff;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 0;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Custom Product List */
+.custom-product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.custom-product-item {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+}
+
+.removee-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.remove-button:hover {
+    background-color: darkred;
+}
+
+.remove-button svg {
+    fill: #ff5c5c;
+    transition: fill 0.3s ease;
+    width: 24px;
+    height: 24px;
+}
+
+/* React-Select Styling */
+.react-select-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cst-react-select-container {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 200px;
+}
+
+.react-select__control {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.react-select__control--is-focused {
+    border-color: #007bff;
+    box-shadow: 0 0 0 1px #007bff;
+}
+
+.react-select__option--is-focused {
+    background-color: #e0f3ff;
+}
+
+.react-select__option--is-selected {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Utility Styles */
+.flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Table Styling */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.sho-shop-products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed; /* Use fixed layout for explicit width control */
+}
+
+.sho-shop-products-table th,
+.sho-shop-products-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle; /* Ensure the contents are vertically centered */
+}
+
+/* Header Styling */
+.sho-shop-products-table th {
+    background-color: #141E46;
+    color: white;
+    padding: 10px; /* Ensure padding is consistent */
+    overflow: hidden; /* Prevent overflowing of content */
+    text-overflow: ellipsis; /* Ellipsis for overflowed text */
+    font-weight: bold; /* Bold text for header */
+}
+
+/* Specifically target the product name cell */
+.sho-shop-products-table td:first-child {
+    width: 90%; /* Ensure product name takes significant space */
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Prevent overflowing */
+    text-overflow: ellipsis; /* Ellipsis for overflowed text */
+}
+
+/* Adjust the cell containing the checkbox */
+.sho-shop-products-table td:nth-child(2) {
+    width: 99%; /* Allocate space for the checkbox column */
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: flex-start; /* Move the checkbox to the left */
+    align-items: center; /* Center the checkbox vertically */
+    padding: 0; /* Remove padding for better alignment */
+    height: 40px;
+}
+
+.sho-shop-products-table td input[type="checkbox"] {
+    cursor: pointer;
+    margin: 0; /* Remove margin for better centering */
+    transform: scale(1.2); /* Scale up the checkbox for better visibility */
+    vertical-align: left; /* Ensure checkbox is vertically centered */
+}
+
+/* Styling for Price Column */
+.sho-shop-products-table td:nth-child(3) {
+    width: 25%; /* Allocate space for the price column */
+    text-align: right; /* Align text to the right for prices */
+}
+
+.price-input {
+    width: 80%; /* Set input field width relative to the cell */
+    padding: 4px;
+    text-align: right; /* Align the text to the right for prices */
+    border: 1px solid #ccc; /* Add border to the input */
+    border-radius: 4px; /* Slight rounding of input corners */
+    font-size: 14px; /* Adjust font size for better visibility */
+}
+
+/* New Actions Column */
+.sho-shop-products-table td:nth-child(4) {
+    width: 15%; /* Allocate space for the actions column */
+    text-align: center; /* Center the actions */
+}
+
+.cat-sub-select {
+    display: inline-flex;
+    gap: 5px;
+}
+
+/* Media Query for Screens under 1000px */
+@media screen and (max-width: 1000px) {
+    .container {
+        padding: 10px;
+    }
+
+    .section {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .custom-product-input {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .flex-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .shp-manager-title,
+    .subtitle {
+        font-size: 22px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .sho-shop-products-table th,
+    .sho-shop-products-table td {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .price-input {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 610px) {
+    .section {
+        display: block;
+        padding: 10px;
+    }
+
+    .custom-product-input {
+        width: calc(100% - 50px);
+        margin-right: 0;
+    }
+
+    .flex-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .shp-manager-title,
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .custom-product-item {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .sho-shop-products-table th,
+    .sho-shop-products-table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .price-input {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+        padding: 10px 0;
+        }
+        }
+        
+        /* Additional Media Query for Very Small Devices */
+        @media screen and (max-width: 400px) {
+        .shp-manager-title,
+        .subtitle {
+        font-size: 16px;
+        }
+        
+        css
+        Copy code
+        .button {
+            font-size: 12px;
+            padding: 6px 10px;
+        }
+        
+        .sho-shop-products-table th,
+        .sho-shop-products-table td {
+            font-size: 10px;
+            padding: 4px;
+        }
+        
+        .price-input {
+            font-size: 10px;
+            padding: 2px;
+        }
+        
+        .submit-button {
+            font-size: 12px;
+            padding: 8px 0;
+        }
+        }
+
+        .custom-product {
+            padding: 10px;
+        }
+        
+        .custom-product h3 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        
+        .cst-table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        
+        .cst-sho-shop-products-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .cst-sho-shop-products-table th,
+        .cst-sho-shop-products-table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        .cst-sho-shop-products-table th {
+            background-color: #f4f4f4;
+        }
+        
+        .cst-name-input,
+        .price-input,
+        .cst-react-select-container {
+            width: auto;
+            box-sizing: border-box;
+            align-self: center;
+        }
+        
+        .cst-check-box {
+            display: block;
+            margin: auto;
+            width: 50%;
+        }
+        
+        .custom-product-inputs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        
+        .custom-product-inputs input,
+        .custom-product-inputs .cst-react-select-container,
+        .custom-product-inputs button {
+            flex: 1 1 calc(100% - 10px);
+            margin: 5px 0;
+        }
+        
+        .custom-product-inputs button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            flex: 1 1 100%;
+        }
+        
+        .custom-product-inputs button:hover {
+            background-color: #0056b3;
+        }
+        
+        @media (min-width: 600px) {
+            .custom-product-inputs input,
+            .custom-product-inputs .cst-react-select-container,
+            .custom-product-inputs button {
+                flex: 1 1 30%;
+            }
+        
+            .custom-product-inputs button {
+                flex: 1 1 calc(30% - 10px);
+            }
+        }
+        

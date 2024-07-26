@@ -17,7 +17,6 @@
     gap: 60px; /* Add smaller gap between grid items */
     width: 250px;
     margin-left: 230px;
-    background-color: #F4F7F7;
     padding-right: 500px;
     padding-top: 50px;
     padding-left: 50px;
@@ -27,16 +26,16 @@
   }
   
   .products {
-    background-color: #f9f9f9; /* Background color for each product */
-    border-radius: 8px; /* Rounded corners for product container */
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
-    width: 100%; /* Set width to fill grid cell */
+    width: 100%; 
     display: flex; /* Use flexbox to align image and details */
     flex-direction: column; /* Stack image and details vertically */
-    padding: 10px; /* Add padding inside each product container */
+    padding: 10px; 
   }
   
-  .product-images {
+  .prod-img {
     width: 100%; /* Make the image fill the container */
     border-radius: 8px 8px 0 0; /* Rounded corners for top of product image */
   }

@@ -1,0 +1,146 @@
+/* Container styling */
+.rv-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  /* Header styling */
+  .rv-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #343a40;
+    text-align: center;
+  }
+  
+  /* Shop list container */
+  .rv-shop-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Shop card styling */
+  .rv-shop-card {
+    display: block;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+
+  .rv-shop-details {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .rv-shop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Shop image styling */
+  .rv-shop-image {
+    width: 30%;
+    height: 100px;
+    object-fit: cover;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  /* Shop info styling */
+  .rv-shop-info {
+    padding: 15px;
+  }
+  
+  .rv-shop-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #007bff;
+  }
+  
+  .rv-shop-info p {
+    margin: 5px 0;
+    color: #6c757d;
+  }
+  
+  /* Categories styling */
+  .rv-shop-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .rv-category-badge {
+    background-color: silver;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    align-items: flex-start;
+  }
+  
+  /* Visited date styling */
+  .rv-visited-at {
+    font-size: 0.8em;
+    color: #6c757d;
+    margin-top: -10px;
+  }
+  
+  /* Show more button styling */
+  .rv-show-more-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    align-self: center;
+    transition: background-color 0.3s;
+  }
+  
+  .rv-show-more-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive styles */
+  @media (min-width: 576px) {
+    .rv-shop-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  
+    .rv-shop-card {
+      width: calc(100% / 2 - 20px);
+    }
+  
+    .rv-shop-image {
+      height: 80px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .rv-shop-card {
+      width: calc(100% / 3 - 20px);
+    }
+  
+    .rv-shop-image {
+      height: 80px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .rv-shop-card {
+      width: calc(100% / 4 - 20px);
+    }
+  
+    .rv-shop-image {
+      height: 200px;
+    }
+  }
+  

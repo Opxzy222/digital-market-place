@@ -1,6 +1,7 @@
 .product-list-container {
     margin-left: -20px;
-    margin-bottom: 50px
+    margin-bottom: 50px;
+    display: block;
 }
 .products-list {
     display: grid;
@@ -9,7 +10,7 @@
     /*background-color: white;*/
     margin-top: 0px; 
     margin-right: 20px;
-    margin-left: -110px;
+    margin-left: -160px;
     padding: 30px;
     padding-bottom: 1270px;
     overflow-y: visible;
@@ -27,20 +28,20 @@
   
   .product {
     padding: 10px;
-    background-color:aliceblue;
+    background-color:whitesmoke;
     flex-direction: row;
     display: block;
     overflow: hidden;
-    height: 250px;
-    padding-bottom: 40px;
+    height: 230px;
+    padding-bottom: 15px;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0.5, 0.5, 0.5, 0.7);
+    
   }
-
-  
   
   .product img {
-    width: 250px;
-    height: 200px;
+    width: 265px;
+    height: 180px;
     object-fit: cover;
     margin-left: -10px;
     margin-top: -10px;
@@ -49,88 +50,105 @@
   .price-title {
     text-align: left;
     color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .price {
-    color: #00204A
+    color: #00204A;
+    font-weight: bolder;
+    
   }
 
   .heading {
-    margin-top : 10px; 
-    margin-bottom: -25px;
-    margin-left: -1000px;
+    margin-top : 100px; 
+    margin-bottom: -22px;
+    margin-left: -890px;
     color: black;
-  }
-
-
-  .intro-h {
-    margin-left: -20px;
     font-size: 25px;
-    font-weight: bold;
-    text-align: start;
-    display: flex;
-    margin-top: -40px;
-    margin-left: 40px;
-    text-decoration: none;
-    color: black;
-    width: 100%;
-  }
-  
-  
-
-
-  /* Adjust product list layout for smaller screens */
-@media screen and (max-width: 768px) {
-  .search-container {
-    padding: 10px; /* Adjust padding */
-    margin: 0;
-    background-size: contain; /* This will cover the entire container with the background image */
-    background-repeat: no-repeat;
   }
 
-  .intro-container {
-    flex-direction: column; /* Switch to column layout */
-    align-items: center; /* Center align elements */
-    margin-top: 50px; /* Adjust margin */
-    margin-bottom: 50px; /* Adjust margin */
-  }
-
-  .intro {
-    padding: 20px; /* Adjust padding */
-    margin: 0; /* Reset margin */
-    text-align: center; /* Center align text */
-    background-image: none; /* Remove background image */
-  }
-
-  .intro-h {
-    visibility: hidden;
-  }
-
-  .sell-container {
-    visibility: hidden;
+@media screen and (min-width: 1201px) and (max-width: 1300px) {
+  .product-list-container {
+    margin-left: 20px
   }
 
   .heading {
-    margin-left: 5px;
-  }
-
-  .products-list {
-    margin: 20px; 
-    margin-top: 110px;
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); /* Adjust grid columns */
-    overflow-y: visible;
-    padding-bottom: 1290px;
-    margin-bottom: 100px;
+    margin-left: -750px;
   }
 }
+  
+@media screen and (max-width: 1200px) {
+    .products-list {
+      overflow-y: visible;
+      padding-bottom: 10px;
+      height: auto;
+      margin-bottom: 100px;
+      width: 90%;
+      position: relative;
+      bottom: 140px
+    }
 
-@media screen and (max-width: 1024px) {
-  .product-list-container {
-    margin-left: -15px;
+    .product {
+      padding-bottom: -1000px;
+      height: 200px;
+    }
+
+    .product img {
+      height: 150px;
+    }
+
+    .heading {
+      display: none
+    }
   }
 
-  .heading {
-    margin-left: 0px;
-    margin-right: 250px;
+  @media screen and (min-width: 850px) and (max-width: 1200px) {
+    .products-list {
+      margin-top: 110px;
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
+      margin-left: 5px;
+      width: 94%;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 849px) {
+    .products-list {
+      margin-top: 110px;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+      margin-left: 5px;
+      width: 94%;
+    }
+  }
+
+  @media screen and (min-width: 580px) and (max-width: 767px) {
+    .products-list {
+      margin-top: 110px;
+      grid-template-columns: repeat(3, minmax(80px, 1fr));
+      margin-left: 5px;
+      width: 92%;
+      position: relative;
+      left: 5px
+    }
+  }
+
+  @media screen and (min-width: 500px) and (max-width: 580px) {
+    .products-list {
+      margin-top: 110px;
+      grid-template-columns: repeat(2, minmax(80px, 1fr));
+      margin-left: 5px;
+      width: 92%;
+      position: relative;
+      left: -5px
+    }
+  }
+
+@media screen and (min-width: 200px) and (max-width: 499px) {
+  .products-list {
+    margin-top: 110px;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    margin-left: 2px;
+    width: 88%;
   }
 }

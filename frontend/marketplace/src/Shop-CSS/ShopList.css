@@ -1,0 +1,92 @@
+/* ShopList.css */
+
+.shop-list-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.shops {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.shop-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1 1 280px; /* Allows cards to flexibly fit within the container */
+  max-width: 280px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.shop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.shop-card h2 {
+  background: #000000;
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  margin: -20px -20px 20px -20px;
+  font-size: 1.2em;
+}
+
+.shop-card p {
+  margin: 10px 0;
+}
+
+.shop-card p strong {
+  display: block;
+  font-size: 1.1em;
+}
+
+.shop-card-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px;
+}
+
+.shop-card-buttons button {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+  width: 80%;
+}
+
+.shop-card-buttons .view-shop-button {
+  background-color: green;
+  color: white;
+}
+
+.shop-card-buttons .close-shop-button {
+  background-color: red;
+  color: white;
+}
+
+.manage-shop-button {
+  background-color: #1679AB;
+  color: white;
+  width: 80%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .shop-card {
+    width: 100%;
+    max-width: none; /* Remove max-width for full width on smaller screens */
+  }
+}

@@ -3,16 +3,17 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 55%;
+  width: 100%;
   margin: auto;
-  margin-top: 70px;
+  margin-top: 50px;
+  height: 1900px;
 }
 
 .product-form {
   display: flex;
   flex-direction: column;
-  width: 55%;
-  margin-left: 100px;
+  width: 50%;
+  margin-left: 70px;
 }
 
 .form-group {
@@ -95,4 +96,19 @@ button:hover {
 .form-control-files {
   margin-bottom: 10px;
   margin-left: -52px;
+}
+
+.basic-multi-select {
+  text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  .product-form-container {
+    width: 100%
+  }
+
+  .product-form {
+    width: 80%;
+    margin-left: 20px;
+  }
 }
