@@ -1,0 +1,121 @@
+/* General Styling */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for all categories */
+.category-container-as {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.category-heading-as {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.categorylist-container-as {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Category List */
+.categoryList-as {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.categoryList-as li {
+  flex: 1 1 calc(50% - 20px);
+  margin: 10px;
+  max-width: calc(50% - 20px);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-item-as {
+  background-color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-item-as:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon-as {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.category-details-as {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-name-as {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .categoryList-as li {
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+
+  .category-item-as {
+    padding: 15px;
+  }
+
+  .icon-as {
+    width: 50px;
+    height: 50px;
+  }
+
+  .product-name-as {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryList-as li {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .category-item-as {
+    padding: 10px;
+  }
+
+  .icon-as {
+    width: 40px;
+    height: 40px;
+  }
+
+  .product-name-as {
+    font-size: 12px;
+  }
+}

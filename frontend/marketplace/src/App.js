@@ -1,60 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import CategoryList from './Components/categoryList';
-import ProductList from './Components/ProductList';
-import SignInPage from './Pages/SingInPage';
-import SearchResultsPage from './Pages/SearchResult';
-import SearchComponent from './Components/SearchComponent';
-import ProductForm from './Pages/CreateAd';
-import ProductDetails from './Pages/productDetails';
-import MyAdverts from './Pages/MyAds';
+import SignInPage from './Market-pages/SingInPage';
+import SearchResultsPage from './Market-pages/SearchResult';
+import ProductForm from './Market-pages/CreateAd';
+import ProductDetails from './Market-pages/productDetails';
+import MyAdverts from './Market-pages/MyAds';
 import { Helmet } from 'react-helmet';
-import profileIcon from './Image/profile-icon.png'
-import adIcon from './Image/my-ad-icon.png'
-import notificationIcon from './Image/notification-icon.png'
-import messagesIcon from './Image/messages-icon.png';
-import bookmarksIcon from './Image/bookmarks-icon.png'
 import './CSS/App.css';
-import SignUpPage from './Pages/signupPage';
-import myLogo from './Image/marketplace-logo.png'
+import SignUpPage from './Market-pages/signupPage';
+import MarketHomePage from './Market-pages/MarketHomePage';
+import ShopHomePage from './Shop-pages/ShopHompage';
+import CreateShop from './Shop-pages/CreateShop';
+import ShopManager from './Shop-pages/ShopManager';
+import ShopProduct from './Shop-pages/ShopProduct';
+import ShopsList from './Shop-pages/ShopList';
+import UpdateShopProducts from './Shop-pages/UpdateShopProduct';
+import SearchResults from './Shop-pages/SearchResults';
+import MessageList from './Shop-pages/MessageList';
+import SendMessage from './Shop-pages/SendMessage';
+import Conversation from './Shop-pages/Conversation';
+import SubCategoryList from './Shop-pages/ShopSubCategoryList';
+import ShopPage from './Shop-pages/ShopPage';
+import AdminShopPage from './Shop-pages/AdminShopPage';
+import AllRecentlyVisitedShops from './Shop-pages/AllRecentlyVisitedShops';
+import AllFollowedShops from './Shop-pages/AllFollowedShops';
+import AllCategories from './Shop-pages/AllCategories';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showFooter, setShowFooter] = useState(false);
-  const [showProfile, setShowProfile] = useState(false)
 
   useEffect(() => {
-    // Check if the session token exists in local storage.
     const sessionToken = localStorage.getItem('sessionToken');
     if (sessionToken) {
       setIsAuthenticated(true);
     }
-
-    // Add event listener to track scroll position
     window.addEventListener('scroll', handleScroll);
-
-    // Remove event listener on component unmount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   const handleSignIn = () => {
     setIsAuthenticated(true);
   };
 
   const handleLogout = () => {
-    // Clear the session token from local storage
     localStorage.removeItem('sessionToken');
     localStorage.removeItem('user_id');
-    // Redirect the user to the login page
-    window.location.href = '/'; // Redirect using window.location
-    console.log('logout successful')
+    window.location.href = '/';
+    console.log('logout successful');
   };
 
-  const handleScroll = () => {
-    // Calculate the distance between the bottom of the page and the bottom of the viewport
-    const distanceToBottom = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
 
-    // Show the footer when the distance to the bottom is less than a threshold (e.g., 50 pixels)
+  const handleScroll = () => {
+    const distanceToBottom = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
     if (distanceToBottom < 50) {
       setShowFooter(true);
     } else {
@@ -62,100 +60,57 @@ function App() {
     }
   };
 
-  const toggleProfile = () => {
-    setShowProfile((prevValue) => !prevValue)
-  }
-
   return (
     <Router>
       <div className="App">
-        <Helmet>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-        </Helmet>
-        <header className='header-container'>
-          <Link to="/"  title='home'>
-                <img src={myLogo} alt='bookmarks' className="marketplace-logo" />
-          </Link>
-          {/* Conditionally render the sign-in link or other links */}
-          {isAuthenticated ? (
-            <>
-
-          <Link to="/" className="header-link" title='bookmarks'>
-            <img src={bookmarksIcon} alt='bookmarks' className="header-link" />
-          </Link>
-
-              <Link to="/" className="header-link" title='messages'>
-                <img src={messagesIcon} alt='messages' className="header-link" />
-              </Link>
-
-              <Link to="/" className="header-link" title='notifications'>
-                <img src={notificationIcon} alt='notification' className="header-link" />
-              </Link>
-              
-              <Link to="/my-ads" className="header-link" title='my ads'>
-                <img src={adIcon} alt='my ads' className="header-link" />
-              </Link>
-              <img src={profileIcon} alt='profile' className="profile-link" onClick={toggleProfile} onMouseEnter={toggleProfile} onMouseLeave={toggleProfile} title='profile' />
-            </>
-
-          ) : (
-            <div className='sign-in-container'>
-              <Link to='/signin' className='sign-in'>SIGN IN</Link>
-            </div>
-          )}
-        </header>
-
-        {showProfile && (
-        <nav className="profile">
-          <div className='profile-details'>My shop</div>
-          <div className='profile-details'>Feedback</div>
-           <div className='profile-details'>Settings</div>
-          <div className='profile-details' onClick={handleLogout}>Log out</div>
-        </nav>
-      )}
-
         <Routes>
-          <Route path="/" element={<Homepage isAuthenticated={isAuthenticated} />} />
+          <Route path="/" element={<Homepage />} />
           <Route path="/signin" element={<SignInPage onSignIn={handleSignIn} />} />
-          <Route path="/Homepage" element={<Homepage isAuthenticated={isAuthenticated} />} />
-          <Route path="/search-results" element={<SearchResultsPage />} />
-          <Route path="/create-ad" element={<ProductForm isAuthenticated={isAuthenticated} />} />
-          <Route path="my-ads" element={<MyAdverts isAuthenticated={isAuthenticated} />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/market-homepage" element={<MarketHomePage isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/market-homepage/create-ad" element={<ProductForm isAuthenticated={isAuthenticated} />} />
+          <Route path="/market-homepage/search-results" element={<SearchResultsPage />} />
+          <Route path="/market-homepage/my-ads" element={<MyAdverts isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/market-homepage/product/:id" element={<ProductDetails isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+
+          <Route path="/shop-homepage" element={<ShopHomePage isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/create-shop" element={<CreateShop isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/shop-manager" element={<ShopManager isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/shop-product" element={<ShopProduct isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/shop-list" element={<ShopsList isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/update-shop-product" element={<UpdateShopProducts isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/search-result" element={<SearchResults isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/message-list" element={<MessageList isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/send-messages/:shopId" element={<SendMessage isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/conversation/:shop_id" element={<Conversation isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/subcategories/:category_id" element={<SubCategoryList isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/shop-page/:shopId" element={<ShopPage isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/shop-homepage/admin-shop-page/:shopId" element={<AdminShopPage isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/recently-visited-shops" element={<AllRecentlyVisitedShops isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/followed-shops" element={<AllFollowedShops isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          <Route path="/all-categories" element={<AllCategories isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
+          
         </Routes>
-        
       </div>
     </Router>
   );
 }
 
-function Homepage({ isAuthenticated }) {
+function Homepage() {
   return (
     <div className='homepage-container'>
-      <Helmet>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-      </Helmet>
-      
-      <div>
-        <SearchComponent isAuthenticated={isAuthenticated} />
-      </div>
-      <div className='cat-advert'>
-        <div className='cat'>
-        <div div style={{ flex: 1 }}>
-          <CategoryList />
+      <Link  className='link' to={'/market-homepage'}>
+        <div className='market-container'>
+          <h3>Go to market</h3>
         </div>
-          <div className='headings'>
-            <h3>Trending ad</h3>
-          </div>
-          <div style={{ flex: 3 }}> 
-            <ProductList isAuthenticated={isAuthenticated} />
-          </div>
-        
-      </div>
-      </div>
+      </Link>
+      <Link  className='link' to={'/shop-homepage'}>
+        <div className='shop-container'>
+          <h3>go to shop</h3>
+        </div>
+      </Link>
     </div>
-  );
+  )
 }
 
 export default App;

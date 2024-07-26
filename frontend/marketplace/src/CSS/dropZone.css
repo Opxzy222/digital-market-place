@@ -1,62 +1,86 @@
 .dropzone-container {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .dropzone {
-    border: 2px dashed #cccccc;
-    padding: 20px;
-    cursor: pointer;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-  }
+  border: 2px dashed #cccccc;
+  padding: 20px;
+  cursor: pointer;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+}
 
-  .dropzone p {
-    font-size: 50px;
-    margin-top: -10px;
-    color: black; 
-  }
-  
-  .dropzone:hover {
-    border-color: black;
-  }
-  
-  .file-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .file-list li {
-    margin-bottom: 5px;
-  }
-  
-  /* Style for selected files */
-  .selected-file {
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    padding: 5px;
-  }
-  
-  .selected-file:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .image-items {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    margin-left: -32px;
-    border: 1px solid silver;
-    max-width: 100px; 
-  }
+.dropzone p {
+  font-size: 50px;
+  margin-top: -10px;
+  color: black; 
+}
 
-  .image-list li {
-    list-style: none;
-  }
+.dropzone:hover {
+  border-color: black;
+}
 
-  .image-list {
-    gap: 33px;
-    flex-wrap:wrap-reverse;
-  }
+.file-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.file-list li {
+  margin-bottom: 5px;
+}
+
+/* Style for selected files */
+.selected-file {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.selected-file:hover {
+  background-color: #e0e0e0;
+}
+
+.image-item-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-items {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-left: -32px;
+  border: 1px solid silver;
+  max-width: 100px;
+}
+
+.image-list {
+  gap: 33px;
+  flex-wrap: wrap-reverse;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.remove-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.remove-button:hover {
+  background: darkred;
+}

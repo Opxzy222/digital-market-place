@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@use-gesture/react": "^10.3.1",
+    "hammerjs": "^2.0.8",
+    "react-hammerjs": "^1.0.1",
+    "react-touch": "^0.4.4"
+  }
+}

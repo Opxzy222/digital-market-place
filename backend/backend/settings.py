@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from corsheaders.defaults import default_headers
+
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -24,7 +26,16 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'Image', 'Image')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Paths to the certificate and key files
+CERT_FILE = os.path.join(BASE_DIR, 'localhost+1.pem')
+KEY_FILE = os.path.join(BASE_DIR, 'localhost+1-key.pem')
+
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -35,7 +46,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.20.10.3', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['172.20.10.3', 'localhost', '127.0.0.1', '192.168.0.194', '192.168.0.194:8000']
 
 
 # Application definition
@@ -47,9 +58,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'backend',
     'corsheaders',
     'mptt',
+    'django_extensions',
+    'sslserver',
+    'channels',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -61,14 +77,22 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',  
+    'django.middleware.common.CommonMiddleware',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5500',
-    'http://localhost:5500'
+    'http://localhost:5500',
+    "http://localhost:3000",
+    "http://192.168.0.194:3000"
 ]
+
+CORS_ALLOW_HEADERS = default_headers + (
+    'cache-control',
+    # Add any other custom headers if required
+)
 
 
 
@@ -92,15 +116,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-from dotenv import load_dotenv
-import os
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASS'),
@@ -108,6 +137,8 @@ DATABASES = {
         'PORT': os.environ.get('DB_PORT')      
     }
 }
+
+GDAL_LIBRARY_PATH = '/usr/lib/libgdal.so'
 
 
 # Password validation
@@ -149,3 +180,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
