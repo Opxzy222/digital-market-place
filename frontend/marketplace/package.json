@@ -13,24 +13,16 @@
     "bootstrap": "^5.3.3",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
-    "react-app-rewired": "^2.2.1",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
-    "react-dropdown-tree-select": "^2.8.0",
     "react-dropzone": "^14.2.3",
     "react-helmet": "^6.1.0",
     "react-image": "^4.1.0",
     "react-image-gallery": "^1.3.0",
     "react-images": "^1.2.0-beta.7",
-    "react-multi-select-component": "^4.3.4",
-    "react-multiselect-checkbox": "^2.9.0",
     "react-photo-gallery": "^8.0.0",
-    "react-rating-stars-component": "^2.2.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
-    "react-select": "^5.8.0",
-    "react-select-async-paginate": "^0.7.4",
-    "react-stars": "^2.2.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -39,7 +31,6 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://192.168.0.194:8000",
   "eslintConfig": {
     "extends": [
       "react-app",

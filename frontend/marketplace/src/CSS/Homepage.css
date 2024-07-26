@@ -1,60 +1,103 @@
-   .cat {
+.categoryList {
+    background-color: white;
+    padding-bottom: 140px;
+    padding-right: 40px;
+    text-align: left;
+    margin-left: 25px;
+    padding-top: 20px;
+    border: solid 1px black;
+    border-radius: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 230px;
+    width: 200px;
+}
+
+.subcategoryList {
+    background-color: white;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 140px;
+    text-align: left;
+    margin-left: -5px;
+    margin-top: -64px;
+    z-index: 1;
+    position: absolute; /* Position subcategory list absolutely */
+    left: 100%; /* Position subcategory list to the right of the category list */
+    overflow-y: auto;
+    height: 230px;
+    border: solid 1px black;
+    border-radius: 5px;
+    overflow-y: hidden;
+}
+
+.heading-display {
+   margin-bottom: -10px;
+   margin-top: -90px;
+}
+
+.product-view {
+    background-color: aqua;
+}
+
+.category-container {
+    position: relative; /* Set the position of the category container to relative */
     display: flex;
-  }
-  
-  .cat-advert {
-    display: block;
-  }
-  
-  .headings {
-    visibility: hidden;
-  }
-  
-  @media screen and (max-width: 1200px) {
-    .cat {
-      display: block;
+    align-items: flex-start;
+}
+
+.categoryList li:hover .subcategoryList {
+    display: block; /* Show subcategories when category item is hovered */
+}
+
+.categoryList li,
+.subcategoryList li {
+    list-style-type: none;
+    margin-bottom: 13px;
+    width: 200px; /* Set a fixed width */
+}
+
+.subcategoryList li a, .categoryList li a {
+    text-decoration: none; /* Remove text underline */
+}
+
+.product-name {
+    color: black;
+    font-weight: bold;
+}
+
+.body {
+    background-color: silver;
+}
+
+@media screen and (max-width: 768px) {
+    .categoryList,
+    .subcategoryList {
+      overflow: visible; /* Change overflow to visible */
+      width: auto; /* Remove fixed width */
+      margin-left: 0; /* Remove left margin */
+      margin-top: 0px;
     }
   
-    .headings {
-      visibility: visible;
-      margin-left: -140px;
-      margin-top: 110px;
-      font-weight: bolder;
-      font-size: 20px;
+    .categoryList li,
+    .subcategoryList li {
+      width: 100%; /* Make list items take full width */
+      margin-bottom: 10px; /* Adjust margin */
     }
   
-    .heading {
-      visibility: hidden;
+    .subcategoryList {
+      padding-top: 10px; /* Adjust padding */
+      position: relative; /* Reset position */
+      left: auto; /* Reset left */
+      margin-left: 0;
     }
+    .categoryList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    flex: 2;
+    width: 100%;
+    padding-right: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
   }
-  
-  @media screen and (min-width: 600px) and (max-width: 800px) {
-    .headings {
-      margin-left: -117px;
-    }
-  }
-  
-  @media screen and (min-width: 520px) and (max-width: 600px) {
-    .headings {
-      margin-left: -230px;
-    }
-  }
-  
-  @media screen and (min-width: 400px) and (max-width: 519px) {
-    .headings {
-      margin-left: -117px;
-    }
-  }
-  
-  @media screen and (min-width: 360px) and (max-width: 399px) {
-    .headings {
-      margin-left: -125px;
-    }
-  }
-  
-  @media screen and (min-width: 300px) and (max-width: 359px) {
-    .headings {
-      margin-left: -70px;
-    }
-  }
-  

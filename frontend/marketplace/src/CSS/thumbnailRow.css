@@ -1,76 +1,16 @@
 .thumbnail-row {
     display: flex;
     align-items: center;
-    margin-left: 0px;
-    position: absolute;
-    top: 640px;
+    margin-top: 10px;
   }
   
   .thumbnail-item {
-    width: 100px; /* Adjust the width as needed */
-    height: 100px; /* Adjust the height as needed */
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
     margin-left: 5px;
     border-radius: 7px;
-    justify-content: center;
-    background-color: black;
-    align-content: center;
   }
   
   .remaining-thumbnails {
     font-weight: bold;
-    font-size: 25px;
-    color: white;
-  }
-
-  @media screen and (max-width: 1300px) {
-    .thumbnail-row {
-      margin-left: 0px;
-    }
-
-    .thumbnail-item {
-      width: 60px; /* Adjust the width as needed */
-      height: 60px; /* Adjust the height as needed */
-    }
-  }
-
-  @media screen and (min-width: 1001px)and (max-width: 1300px) {
-    .thumbnail-row {
-      top: 653px
-    }
-  }
-
-  @media screen and (min-width: 771px)and (max-width: 992px) {
-    .thumbnail-row {
-      top: 120px
-    }
-  }
-
-  @media screen and (min-width: 600px)and (max-width: 770px) {
-    .thumbnail-row {
-      top: 120px
-    }
-  }
-
-  @media screen and (min-width: 520px) and (max-width: 599px) {
-    .thumbnail-row {
-     top: -30px;
-    }
-  }
-
-  @media screen and (min-width: 430px) and (max-width: 519px) {
-    .thumbnail-row {
-     top: -80px;
-    }
-  }
-
-  @media screen and (min-width: 200px) and (max-width: 429px) {
-    .thumbnail-row {
-     top: -130px;
-    }
-  }
-
-  @media screen and (min-width: 200px) and (max-width: 359px) {
-    .thumbnail-row {
-     top: -177px;
-    }
   }

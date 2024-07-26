@@ -1,6 +1,0 @@
-green_eco_friendly = Category.objects.create(name='Green & Eco-friendly', parent=None)
-eco_friendly_products = Category.objects.create(name='Eco-friendly Products', parent=green_eco_friendly)
-sustainable_clothing = Category.objects.create(name='Sustainable Clothing', parent=green_eco_friendly)
-reusable_goods = Category.objects.create(name='Reusable Goods', parent=green_eco_friendly)
-zero_waste_stores = Category.objects.create(name='Zero-Waste Stores', parent=green_eco_friendly)
-organic_products = Category.objects.create(name='Organic Products', parent=green_eco_friendly)

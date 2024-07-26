@@ -1,120 +1,84 @@
-/* Container and General Styles */
-.is-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f8f9fa;
-  padding: 20px;
-}
-
-.is-signin-container {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  max-width: 360px;
-  width: 100%;
-  text-align: center;
-}
-
-.is-title {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  color: #343a40;
-  font-weight: 500;
-}
-
-/* Form Styles */
-.is-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.is-form-group {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.is-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #495057;
-  text-align: left;
-}
-
-.is-input {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  font-size: 1em;
-  background: #f1f3f5;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.is-input:focus {
-  border-color: #80bdff;
-  background-color: #ffffff;
-  outline: none;
-}
-
-/* Button Styles */
-.is-signin-button {
-  background: #007bff;
-  color: #ffffff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  width: 100%;
-}
-
-.is-signin-button:hover {
-  background: #0056b3;
-}
-
-/* Link Styles */
-.is-change-password, .is-signup-contain {
-  margin-top: 20px;
-}
-
-.is-change-pass-link, .is-signup-link {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.is-change-pass-link:hover, .is-signup-link:hover {
-  color: #0056b3;
-}
-
-.is-signup-text {
-  color: #495057;
-}
-
-/* Responsive Styles */
-@media (max-width: 576px) {
-  .is-signin-container {
-    padding: 20px;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: silver;
   }
-
-  .is-title {
-    font-size: 1.5em;
+  
+  .signin-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-right: 40px;
+    padding-left: 20px;
+    padding-bottom: 3%;
+    padding-top: 20px;
+    width: 300px;
+    margin-top: -50px;
   }
-
-  .is-input {
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type='email'],
+  input[type='password'] {
+    width: 100%;
     padding: 10px;
+    border: 1px solid silver;
+    border-radius: 5px;
+  }
+  
+  .signin-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 320px;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .change-password {
+    margin-top: 12px;
+    
   }
 
-  .is-signin-button {
-    padding: 10px 15px;
-    font-size: 0.9em;
+  .change-pass-Link {
+    text-decoration: none;
+    color: black
   }
-}
+
+  .signup-contain {
+    display: flex; /* Use flexbox */
+    align-items: center;
+    color: black;
+    margin-top: 45px;
+    
+  }
+
+  .signup-Link {
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    color: black
+  }
