@@ -11,7 +11,7 @@ const MessageList = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/message-list/?user_id=${userId}`);
+        const response = await axios.get(`https://172.24.210.76:8000/message-list/?user_id=${userId}`);
         setMessages(response.data);
       } catch (error) {
         console.error('Error fetching messages', error);

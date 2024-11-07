@@ -19,7 +19,7 @@ const ShopPage = () => {
   useEffect(() => {
     const fetchShopData = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/${shopId}/`);
+        const response = await axios.get(`https://172.24.210.76:8000/shops/${shopId}/`);
         setShop({ ...response.data, reviews: response.data.reviews || [] });
         setError('');
       } catch (error) {
@@ -30,7 +30,7 @@ const ShopPage = () => {
 
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/${shopId}/reviews/`);
+        const response = await axios.get(`https://172.24.210.76:8000/shops/${shopId}/reviews/`);
         setReviews(response.data.reviews);
       } catch (error) {
         console.error('Error fetching reviews:', error);
@@ -39,7 +39,7 @@ const ShopPage = () => {
 
     const fetchFollowerCount = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/${shopId}/followers/`);
+        const response = await axios.get(`https://172.24.210.76:8000/shops/${shopId}/followers/`);
         setFollowerCount(response.data.count);
       } catch (error) {
         console.error('Error fetching follower count:', error);

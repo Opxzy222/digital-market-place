@@ -3,6 +3,7 @@
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 8px;
+    margin-top: -10px;
   }
   
   /* Header styling */
@@ -101,6 +102,7 @@
     margin-top: 15px;
     align-self: center;
     transition: background-color 0.3s;
+    width: 80%;
   }
   
   .rv-show-more-button:hover {

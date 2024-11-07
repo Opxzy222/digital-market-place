@@ -24,7 +24,7 @@ const ReviewForm = ({ shopId, onReviewSubmitted }) => {
     formData.append('comment', comment);
 
     try {
-      const response = await axios.post(`https://192.168.0.194:8000/shops/reviews/submit/`, formData, {
+      const response = await axios.post(`https://172.24.210.76:8000/shops/reviews/submit/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -25,7 +25,7 @@ function CreateShop({ isAuthenticated, handleLogout }) {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.post('https://192.168.0.194:8000/category/dropdown-options/');
+                const response = await axios.post('https://172.24.210.76:8000/category/dropdown-options/');
                 setCategories(response.data.categories);
             } catch (error) {
                 console.error('Error fetching categories:', error);
@@ -43,7 +43,7 @@ function CreateShop({ isAuthenticated, handleLogout }) {
             const formData = new FormData();
             formData.append('parent_id', selectedCategoryId);
 
-            const response = await axios.post('https://192.168.0.194:8000/category/subcategories/', formData);
+            const response = await axios.post('https://172.24.210.76:8000/category/subcategories/', formData);
             setSubcategories(response.data.subcategories);
         } catch (error) {
             console.error('Error fetching subcategories:', error);
@@ -136,7 +136,7 @@ function CreateShop({ isAuthenticated, handleLogout }) {
             });
             formData.append('shop_owner', user_id);
 
-            const response = await axios.post('https://192.168.0.194:8000/create-shop/', formData);
+            const response = await axios.post('https://172.24.210.76:8000/create-shop/', formData);
             console.log('Shop created:', response.data);
             const shop_id = response.data.shop_id
 

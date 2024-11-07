@@ -14,7 +14,7 @@ function SignInPage({ onSignIn }) {
     formData.append('email', email);
     formData.append('password', password);
     try {
-      const response = await axios.post('https://192.168.0.194:8000/login/', formData);
+      const response = await axios.post('https://172.24.210.76:8000/login/', formData);
       const responseData = response.data;
 
       if (responseData.message === 'login successful') {

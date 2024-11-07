@@ -20,7 +20,7 @@ function ProductDetails({ isAuthenticated, handleLogout }) {
         const formData = new FormData();
         formData.append('id', id);
 
-        const response = await axios.post('https://192.168.0.194:8000//product/', formData);
+        const response = await axios.post('https://172.24.210.76:8000//product/', formData);
         setProduct(response.data.product);
         
       } catch (error) {
@@ -64,8 +64,8 @@ function ProductDetails({ isAuthenticated, handleLogout }) {
   };
 
   const photos = [
-    { original: 'https://192.168.0.194:8000//' + product.image },
-    ...(product.images ? product.images.map(imageUrl => ({ original: 'https://192.168.0.194:8000//' + imageUrl })) : [])
+    { original: 'https://172.24.210.76:8000//' + product.image },
+    ...(product.images ? product.images.map(imageUrl => ({ original: 'https://172.24.210.76:8000//' + imageUrl })) : [])
   ];
 
   return (

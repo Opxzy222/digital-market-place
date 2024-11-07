@@ -23,7 +23,7 @@ function ShopSearchComponent() {
         setLoading(true);
 
         try {
-          const response = await axios.get('https://192.168.0.194:8000/shop-product-search/', {
+          const response = await axios.get('https://172.24.210.76:8000/shop-product-search/', {
             params: {
               input: searchQuery,
               lat: latitude,

@@ -20,7 +20,7 @@ function SignUpPage() {
     formData.append('password', password);
 
     try {
-      const response = await axios.post('https://192.168.0.194:8000/create-user/', formData);
+      const response = await axios.post('https://172.24.210.76:8000/create-user/', formData);
       const responseData = response.data;
       console.log(responseData);
 

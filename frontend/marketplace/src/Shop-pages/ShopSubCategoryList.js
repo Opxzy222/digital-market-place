@@ -12,7 +12,7 @@ function SubCategoryList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://192.168.0.194:8000/shop-subcategories/${categoryId}/`)
+    axios.get(`https://172.24.210.76:8000/shop-subcategories/${categoryId}/`)
       .then(response => {
         setSubcategories(response.data);
         setLoading(false);
@@ -28,7 +28,7 @@ function SubCategoryList() {
         const { latitude, longitude } = position.coords;
 
         try {
-          const response = await axios.get('https://192.168.0.194:8000/shop-category-search/', {
+          const response = await axios.get('https://172.24.210.76:8000/shop-category-search/', {
             params: {
               subcategory_id: subcategoryId,
               lat: latitude,

@@ -23,7 +23,7 @@ const ShopPage = ({ isAuthenticated, handleLogout }) => {
   useEffect(() => {
     const fetchShopData = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/${shopId}/combined/`);
+        const response = await axios.get(`https://172.24.210.76:8000/shops/${shopId}/combined/`);
         const data = response.data;
 
         setShop({
@@ -47,7 +47,7 @@ const ShopPage = ({ isAuthenticated, handleLogout }) => {
 
     const markShopAsVisited = async () => {
       try {
-        await axios.post('https://192.168.0.194:8000/shops/recently-visited/', {
+        await axios.post('https://172.24.210.76:8000/shops/recently-visited/', {
           shop_id: shopId,
           user_id: userId
         });
@@ -58,7 +58,7 @@ const ShopPage = ({ isAuthenticated, handleLogout }) => {
 
     fetchShopData();
     markShopAsVisited();
-  }, [shopId]);
+  }, [userId, shopId]);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -86,7 +86,7 @@ const ShopPage = ({ isAuthenticated, handleLogout }) => {
         <div className="sp-header">
           <img
             className="sp-profile-pic"
-            src={shop.image || "https://via.placeholder.com/80"}
+            src={'https://172.24.210.76:8000/' + shop.image} 
             alt="Shop Profile"
           />
           <div className="sp-info">

@@ -10,7 +10,7 @@ const FollowedShopsPreview = () => {
   useEffect(() => {
     const fetchFollowedShops = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/followed/${userId}/`);
+        const response = await axios.get(`https://172.24.210.76:8000/shops/followed/${userId}/`);
         setShops(response.data);
       } catch (error) {
         console.error('Error fetching followed shops:', error);

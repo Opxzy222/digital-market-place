@@ -36,7 +36,7 @@ function ProductForm({ isAuthenticated, handleLogout }) {
   const user_id = localStorage.getItem('user_id');
 
   useEffect(() => {
-    axios.post('https://192.168.0.194:8000//category/dropdown-options/')
+    axios.post('https://172.24.210.76:8000//category/dropdown-options/')
       .then(response => setCategories(response.data.categories))
       .catch(error => console.error('Error fetching categories:', error));
   }, []);
@@ -45,7 +45,7 @@ function ProductForm({ isAuthenticated, handleLogout }) {
     try {
       const formData = new FormData();
       formData.append('category_id', categoryId);
-      const response = await axios.post('https://192.168.0.194:8000//category/attribute/', formData);
+      const response = await axios.post('https://172.24.210.76:8000//category/attribute/', formData);
       setCategoryAttributes(response.data.attribute);
     } catch (error) {
       console.error('Error fetching attributes:', error);
@@ -56,7 +56,7 @@ function ProductForm({ isAuthenticated, handleLogout }) {
     try {
       const formData = new FormData();
       formData.append('parent_id', parentId);
-      const response = await axios.post('https://192.168.0.194:8000//category/subcategories/', formData);
+      const response = await axios.post('https://172.24.210.76:8000//category/subcategories/', formData);
       setter(response.data.subcategories);
     } catch (error) {
       console.error('Error fetching subcategories:', error);
@@ -182,7 +182,7 @@ function ProductForm({ isAuthenticated, handleLogout }) {
     formData.append('category_id', categoryId);
 
     try {
-      const response = await axios.post('https://192.168.0.194:8000//create-product/', formData, {
+      const response = await axios.post('https://172.24.210.76:8000//create-product/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

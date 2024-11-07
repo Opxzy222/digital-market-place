@@ -2,7 +2,7 @@ import CategoryList from '../Market-Components/categoryList';
 import ProductList from '../Market-Components/ProductList';
 import Header from '../Market-Components/Header'; 
 import SearchComponent from '../Market-Components/SearchComponent';
-import '../CSS/homepage.css';
+import '../CSS/MarketHomepage.css';
 
 function MarketHomePage({ isAuthenticated, handleLogout }) {
     return (

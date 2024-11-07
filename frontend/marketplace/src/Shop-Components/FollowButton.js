@@ -7,7 +7,7 @@ const FollowButton = ({ shopId }) => {
   useEffect(() => {
     const checkFollowingStatus = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/${shopId}/followers-status/`, {
+        const response = await axios.get(`https://172.24.210.76:8000/shops/${shopId}/followers-status/`, {
           params: { user_id: localStorage.getItem('user_id') }
         });
         setFollowing(response.data.following);
@@ -25,7 +25,7 @@ const FollowButton = ({ shopId }) => {
       formData.append('shop_id', shopId);
       formData.append('user_id', localStorage.getItem('user_id'));
 
-      await axios.post('https://192.168.0.194:8000/shops/follow/', formData);
+      await axios.post('https://172.24.210.76:8000/shops/follow/', formData);
       setFollowing(!following);
       
     } catch (error) {

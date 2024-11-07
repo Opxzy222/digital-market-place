@@ -13,9 +13,10 @@ body {
 }
 
 .category-heading-as {
-  text-align: center;
+  text-align: left;
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 35px;
   color: #333;
   font-weight: bold;
 }
@@ -73,7 +74,7 @@ body {
 }
 
 .product-name-as {
-  font-size: 16px;
+  font-size: 18px;
   color: #555;
   margin-top: 10px;
   font-weight: 600;
@@ -91,12 +92,12 @@ body {
   }
 
   .icon-as {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 
   .product-name-as {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -111,11 +112,11 @@ body {
   }
 
   .icon-as {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 
   .product-name-as {
-    font-size: 12px;
+    font-size: 14px;
   }
 }

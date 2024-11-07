@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import ShopHeader from '../Shop-Components/ShopHeader';
 import '../Shop-CSS/AllCategories.css';
 import carIcon from '../Image/car-icon.svg';
 import computerIcon from '../Image/computer-icon.png';
@@ -15,12 +16,12 @@ import servicesIcon from '../Image/services-icon1.jpg';
 import babiesIcon from '../Image/babies-icon.jpg';
 import agricIcon from '../Image/agric-icon.jpg';
 
-function AllCategories() {
+function AllCategories({ isAuthenticated, handleLogout }) {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://192.168.0.194:8000/all-shop-categories/')
+    axios.get('https://172.24.210.76:8000/all-shop-categories/')
       .then(response => {
         const categoryArray = Object.values(response.data);
         setCategories(categoryArray);
@@ -49,7 +50,12 @@ function AllCategories() {
   };
 
   return (
-    <div className='category-container-as'>
+    <div>
+      <ShopHeader 
+        isAuthenticated={isAuthenticated}
+        handleLogout={handleLogout}
+      />
+      <div className='category-container-as'>
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
       </Helmet>
@@ -72,6 +78,7 @@ function AllCategories() {
           </ul>
         </div>
       </div>
+    </div>
     </div>
   );
 }

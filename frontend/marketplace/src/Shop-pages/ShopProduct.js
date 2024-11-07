@@ -20,7 +20,7 @@ function ShopProduct({ isAuthenticated, handleLogout }) {
             try {
                 const formData = new FormData();
                 formData.append('shop_id', shop_id);
-                const response = await axios.post('https://192.168.0.194:8000/shop-products/', formData);
+                const response = await axios.post('https://172.24.210.76:8000/shop-products/', formData);
                 setCategorizedProducts(response.data);
             } catch (error) {
                 console.error('Error fetching shop products:', error);

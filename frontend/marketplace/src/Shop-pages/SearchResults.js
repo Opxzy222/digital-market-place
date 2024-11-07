@@ -33,7 +33,7 @@ function SearchResults({ isAuthenticated, handleLogout }) {
                   <div className='sh-image-container'>
                     {shop.image && 
                       <img 
-                        src={'https://192.168.0.194:8000/' + shop.image} 
+                        src={'https://172.24.210.76:8000/' + shop.image} 
                         alt={`${shop.name}`} 
                         className='sh-shop-image' 
                       />

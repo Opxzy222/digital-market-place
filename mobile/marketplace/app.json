@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "marketplace",
+    "slug": "marketplace",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon-4e3f888fc8475f69fd5fa32f1ad5216a.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash-4dc203c1f48ad8b1e9734613e88be661.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.marketplace"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon-97dae5a0e62ad8551d8a31897b425e63.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.anonymous.marketplace"
+    },
+    "web": {
+      "bundler": "webpack",
+      "favicon": "./assets/images/favicon-4f1cb2cac2370cd5050681232e8575a8.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-asset"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

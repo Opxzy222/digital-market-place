@@ -10,7 +10,7 @@ const AdminShopPosts = ({ shopId }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/${shopId}/posts/`);
+        const response = await axios.get(`https://172.24.210.76:8000/shops/${shopId}/posts/`);
         setPosts(response.data.posts);
       } catch (error) {
         console.error('Error fetching posts:', error);
@@ -46,7 +46,7 @@ const AdminShopPosts = ({ shopId }) => {
     const confirmed = window.confirm('Are you sure you want to delete this post?');
     if (confirmed) {
       try {
-        await axios.delete(`https://192.168.0.194:8000/shops/${shopId}/posts/${postId}/`);
+        await axios.delete(`https://172.24.210.76:8000/shops/${shopId}/posts/${postId}/`);
         setPosts(posts.filter(post => post.id !== postId));
       } catch (error) {
         console.error('Error deleting post:', error);

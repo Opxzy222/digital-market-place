@@ -20,7 +20,7 @@ function ShopCategoryList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://192.168.0.194:8000/shop-categories/')
+    axios.get('https://172.24.210.76:8000/shop-categories/')
       .then(response => {
         const categoryArray = Object.values(response.data);
         setCategories(categoryArray);

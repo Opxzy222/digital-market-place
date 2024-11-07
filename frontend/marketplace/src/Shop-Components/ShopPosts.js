@@ -33,7 +33,7 @@ const ShopPosts = ({ posts }) => {
         {posts.map((post) => (
           <div key={post.id} className="shop-post-item" onClick={() => handleImageClick(post)}>
             {post.media && post.media.length > 0 ? (
-              <img src={post.media[0].url} alt="Post" />
+              <img src={'https://172.24.210.76:8000/' + post.media[0].url} alt="Post" />
             ) : (
               <p>No image available</p>
             )}

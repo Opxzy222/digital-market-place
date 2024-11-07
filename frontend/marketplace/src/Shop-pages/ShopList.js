@@ -14,7 +14,7 @@ const ShopList = () => {
         const formData = new FormData();
         formData.append('user_id', userId);
 
-        const response = await axios.post('https://192.168.0.194:8000/shops-product-count/', formData);
+        const response = await axios.post('https://172.24.210.76:8000/shops-product-count/', formData);
         setShops(response.data);
       } catch (error) {
         console.error('Error fetching shops', error);
@@ -38,7 +38,7 @@ const ShopList = () => {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`https://192.168.0.194:8000/close-shop/${shopId}/`);
+      await axios.delete(`https://172.24.210.76:8000/close-shop/${shopId}/`);
       setShops(shops.filter(shop => shop.id !== shopId));
     } catch (error) {
       console.error('Error closing shop', error);

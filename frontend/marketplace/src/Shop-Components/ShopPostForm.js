@@ -22,7 +22,7 @@ const ShopPostForm = ({ shopId }) => {
     });
 
     try {
-      await axios.post(`https://192.168.0.194:8000/shops/${shopId}/posts/create/`, formData, {
+      await axios.post(`https://172.24.210.76:8000/shops/${shopId}/posts/create/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -25,7 +25,7 @@ function CategoryList() {
 
   useEffect(() => {
     // Fetch category data
-    axios.get('https://192.168.0.194:8000/category-product-count/')
+    axios.get('https://172.24.210.76:8000/category-product-count/')
       .then(response => {
         const categoryArray = Object.values(response.data);
         setCategories(categoryArray);
@@ -39,7 +39,7 @@ function CategoryList() {
     const formData = new FormData()
     formData.append('id', categoryId)
     // Fetch subcategories data for the hovered category
-    axios.post('https://192.168.0.194:8000/subcategories-product-count/', formData)
+    axios.post('https://172.24.210.76:8000/subcategories-product-count/', formData)
       .then(response => {
         const subcategoriesArray = Object.values(response.data)
         setSubcategories(subcategoriesArray)

@@ -12,7 +12,7 @@ function SearchComponent() {
   const handleSearch = async () => {
     try {
       // Make a request to search for products
-      const response = await axios.get(`https://192.168.0.194:8000//product-search/?input=${encodeURIComponent(searchQuery)}`);
+      const response = await axios.get(`https://172.24.210.76:8000//product-search/?input=${encodeURIComponent(searchQuery)}`);
       
       // Navigate to the search results page and pass the search results as state
       navigate('/market-homepage/search-results', { state: { searchResults: response.data } });

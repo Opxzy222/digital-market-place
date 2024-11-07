@@ -24,7 +24,7 @@ function ShopHeader({ isAuthenticated, handleLogout }) {
                     const formData = new FormData();
                     formData.append('user_id', user_id);
 
-                    const response = await axios.post('https://192.168.0.194:8000/unread-messages/', formData, {
+                    const response = await axios.post('https://172.24.210.76:8000/unread-messages/', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data'
                         }

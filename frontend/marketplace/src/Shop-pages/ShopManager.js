@@ -19,7 +19,7 @@ function ShopManager({ isAuthenticated, handleLogout }) {
             try {
                 const formData = new FormData();
                 formData.append('shop_id', shop_id);
-                const response = await axios.post('https://192.168.0.194:8000/product-suggestion/', formData);
+                const response = await axios.post('https://172.24.210.76:8000/product-suggestion/', formData);
                 const { product_suggestions, selected_products } = response.data;
 
                 if (product_suggestions && selected_products) {
@@ -94,7 +94,7 @@ function ShopManager({ isAuthenticated, handleLogout }) {
                 formData.append('custom_products[]', customProduct);
             });
 
-            const response = await axios.post('https://192.168.0.194:8000/add-product-to-shop/', formData, {
+            const response = await axios.post('https://172.24.210.76:8000/add-product-to-shop/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

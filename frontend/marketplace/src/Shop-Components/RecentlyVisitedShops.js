@@ -11,7 +11,7 @@ const RecentlyVisitedShops = () => {
   useEffect(() => {
     const fetchRecentlyVisitedShops = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/recently-visited/${userId}/`);
+        const response = await axios.get(`https://172.24.210.76:8000/shops/recently-visited/${userId}/`);
         setShops(response.data.recently_visited_shops);
       } catch (error) {
         console.error('Error fetching recently visited shops:', error);
@@ -29,7 +29,7 @@ const RecentlyVisitedShops = () => {
 
   return (
     <div>
-      <h2 className='sh-results-header'>Recently Visited Shops</h2>
+      <h2 className='fs-header'>Recently Visited Shops</h2>
       <div className='sh-results-container'>
         <div className='rv-results-grid'>
           {shopsToDisplay.map((shop) => (
@@ -38,7 +38,7 @@ const RecentlyVisitedShops = () => {
                 <div className='sh-image-container'>
                   {shop.image && (
                     <img 
-                      src={'https://192.168.0.194:8000/' + shop.image} 
+                      src={'https://172.24.210.76:8000/' + shop.image} 
                       alt={`${shop.name}`} 
                       className='sh-shop-image' 
                     />

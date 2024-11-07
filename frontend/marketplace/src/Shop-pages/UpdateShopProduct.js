@@ -21,7 +21,7 @@ function UpdateShopProducts({ isAuthenticated, handleLogout }) {
             try {
                 const formData = new FormData();
                 formData.append('shop_id', shop_id);
-                const response = await axios.post('https://192.168.0.194:8000/product-suggestion/', formData);
+                const response = await axios.post('https://172.24.210.76:8000/product-suggestion/', formData);
                 const { product_suggestions, selected_products } = response.data;
                 
                 if (product_suggestions && selected_products) {
@@ -94,7 +94,7 @@ function UpdateShopProducts({ isAuthenticated, handleLogout }) {
         };
     
         fetchProductSuggestions();
-    }, []);
+    }, [shop_id]);
     
     
     const handleAddCustomProduct = () => {
@@ -265,7 +265,7 @@ function UpdateShopProducts({ isAuthenticated, handleLogout }) {
                 formData.append(`subcategory_custom_${index}`, customProduct.subcategory_id || ''); 
             });
     
-            const response = await axios.post('https://192.168.0.194:8000/update-shop-products/', formData, {
+            const response = await axios.post('https://172.24.210.76:8000/update-shop-products/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -288,7 +288,7 @@ function UpdateShopProducts({ isAuthenticated, handleLogout }) {
                             <h3>{category}</h3>
                             {Object.entries(subcategories).map(([subcategory, products]) => (
                                 <div key={subcategory} className="subcategory-container">
-                                    <h4>{subcategory}</h4>
+                                    <h4 className='subcat'>{subcategory}</h4>
                                     <Select
                                         isMulti
                                         value={selectedProducts[category]?.[subcategory] || []}

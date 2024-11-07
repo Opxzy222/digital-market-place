@@ -10,7 +10,7 @@ const FollowedShops = () => {
   useEffect(() => {
     const fetchFollowedShops = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/followed/${userId}/`);
+        const response = await axios.get(`https://172.24.210.76:8000/shops/followed/${userId}/`);
         setShops(response.data);
       } catch (error) {
         console.error('Error fetching followed shops:', error);
@@ -27,7 +27,7 @@ const FollowedShops = () => {
         {shops.map(shop => (
           <Link to={`/shop-homepage/shop-page/${shop.id}`} key={shop.id} className='fs-shop-item'>
             <div className='fs-shop-image-container'>
-              <img src={shop.image} alt={shop.name} className='fs-shop-image' />
+              <img src={'https://172.24.210.76:8000/' + shop.image} alt={shop.name} className='fs-shop-image' />
             </div>
             <p className='fs-shop-name'>{shop.name}</p>
           </Link>

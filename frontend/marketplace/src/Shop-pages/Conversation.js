@@ -19,8 +19,8 @@ const Conversation = () => {
         <div className="message-head">{name}</div>
       </div>
       <Chat
-        fetchMessagesUrl={`https://192.168.0.194:8000/conversation/?conversation_id=${conversation_id}`}
-        sendMessageUrl={`https://192.168.0.194:8000/conversation/`}
+        fetchMessagesUrl={`https://172.24.210.76:8000/conversation/?conversation_id=${conversation_id}`}
+        sendMessageUrl={`https://172.24.210.76:8000/conversation/`}
         conversationId={conversation_id}
       />
     </div>

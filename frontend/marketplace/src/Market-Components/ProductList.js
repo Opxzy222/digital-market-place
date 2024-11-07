@@ -10,7 +10,7 @@ function ProductsList({ isAuthenticated }) {
 
   useEffect(() => {
     // Fetch products from backend
-    axios.get('https://192.168.0.194:8000//display-products/')
+    axios.get('https://172.24.210.76:8000//display-products/')
       .then(response => {
         console.log('Response data:', response.data); // Log the response data
         setProducts(response.data.products)

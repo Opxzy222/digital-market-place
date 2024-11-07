@@ -5,7 +5,7 @@ function Product({ image, title, price }) {
   return (
     <div className="product">
       
-      <img src={'https://192.168.0.194:8000//' + image} alt={title} />
+      <img src={'https://172.24.210.76:8000//' + image} alt={title} />
       
       <div className='price-title'>
         <p>{title}</p>

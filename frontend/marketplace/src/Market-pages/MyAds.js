@@ -12,7 +12,7 @@ function MyAdverts({ isAuthenticated, handleLogout }) {
       try {
         const formData = new FormData();
         formData.append('id', user_id);
-        const response = await axios.post('http://192.168.0.194:8000//user-products/', formData);
+        const response = await axios.post('http://172.24.210.76:8000//user-products/', formData);
         console.log('Response from server:', response.data); // Check the received data from the server
         setProducts(response.data);
       } catch (error) {
@@ -38,7 +38,7 @@ function MyAdverts({ isAuthenticated, handleLogout }) {
           <div className="products-container">
             {products.product.map(product => (
               <div key={product.id} className="products">
-                <img src={'http://192.168.0.194:8000//' + product.image} alt={product.title} className='prod-img' />
+                <img src={'http://172.24.210.76:8000//' + product.image} alt={product.title} className='prod-img' />
                 <div className="product-info">
                   <div className='show-ad'><p>Show ad</p></div>
                   <div className='edit-ad'><p>Edit ad</p></div>

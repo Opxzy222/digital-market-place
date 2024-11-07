@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import ShopHeader from '../Shop-Components/ShopHeader';
 import '../Shop-CSS/SearchResult.css'; 
 
-const AllRecentlyVisitedShops = () => {
+const AllRecentlyVisitedShops = ({ isAuthenticated, handleLogout }) => {
   const [shops, setShops] = useState([]);
   const userId = localStorage.getItem('user_id');
 
   useEffect(() => {
     const fetchRecentlyVisitedShops = async () => {
       try {
-        const response = await axios.get(`https://192.168.0.194:8000/shops/recently-visited/${userId}/`);
+        const response = await axios.get(`https://172.24.210.76:8000/shops/recently-visited/${userId}/`);
         setShops(response.data.recently_visited_shops);
       } catch (error) {
         console.error('Error fetching recently visited shops:', error);
@@ -22,6 +23,10 @@ const AllRecentlyVisitedShops = () => {
 
   return (
     <div>
+      <ShopHeader 
+        isAuthenticated={isAuthenticated}
+        handleLogout={handleLogout}
+      />
       <h2 className='sh-results-header'>All Recently Visited Shops</h2>
       <div className='sh-results-container'>
         <div className='sh-results-grid'>
@@ -31,7 +36,7 @@ const AllRecentlyVisitedShops = () => {
                 <div className='sh-image-container'>
                   {shop.image && (
                     <img 
-                      src={'https://192.168.0.194:8000/' + shop.image} 
+                      src={'https://172.24.210.76:8000/' + shop.image} 
                       alt={`${shop.name}`} 
                       className='sh-shop-image' 
                     />

@@ -1,0 +1,135 @@
+/* General Container */
+.ahp-homepage-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f4f8;
+}
+
+/* Welcome Message */
+.ahp-welcome-message {
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  padding: 40px;
+  border-radius: 15px;
+  color: #fff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ahp-logo-and-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.ahp-logo {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+
+.ahp-welcome-heading {
+  font-size: 13px;
+  font-weight: bolder;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-left: -50px;
+  width: 100%;
+}
+
+.ahp-welcome-subheading {
+  font-size: 1.4em;
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.ahp-welcome-description {
+  font-size: 1.1em;
+  margin-top: 20px;
+  line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Billboard Carousel */
+.ahp-carousel-container {
+  margin-top: 20px;
+  position: relative;
+}
+
+.ahp-advertise-link {
+  margin-top: 10px;
+}
+
+.ahp-shaking-arrow {
+  display: inline-block;
+  animation: ahp-shake 1.5s infinite;
+}
+
+@keyframes ahp-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+/* Market and Shop Links */
+.ahp-links-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.ahp-market-container {
+  padding: 20px;
+  background-color: #0B60B0;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.ahp-shop-container {
+  padding: 20px;
+  background-color: #87CEFA;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.ahp-link {
+  text-decoration: none;
+}
+
+.ahp-market-container:hover, .ahp-shop-container:hover {
+  background-color: #2c3e50;
+  transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .ahp-welcome-heading {
+    font-size: 2em;
+  }
+
+  .ahp-welcome-subheading {
+    font-size: 1.2em;
+  }
+
+  .ahp-welcome-description {
+    font-size: 1em;
+  }
+
+  .ahp-links-container {
+    flex-direction: column;
+  }
+
+  .ahp-market-container, .ahp-shop-container {
+    margin-bottom: 15px;
+  }
+}

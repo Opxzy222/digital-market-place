@@ -25,6 +25,7 @@ import AdminShopPage from './Shop-pages/AdminShopPage';
 import AllRecentlyVisitedShops from './Shop-pages/AllRecentlyVisitedShops';
 import AllFollowedShops from './Shop-pages/AllFollowedShops';
 import AllCategories from './Shop-pages/AllCategories';
+import Homepage from './AppHomePage';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -94,23 +95,6 @@ function App() {
       </div>
     </Router>
   );
-}
-
-function Homepage() {
-  return (
-    <div className='homepage-container'>
-      <Link  className='link' to={'/market-homepage'}>
-        <div className='market-container'>
-          <h3>Go to market</h3>
-        </div>
-      </Link>
-      <Link  className='link' to={'/shop-homepage'}>
-        <div className='shop-container'>
-          <h3>go to shop</h3>
-        </div>
-      </Link>
-    </div>
-  )
 }
 
 export default App;

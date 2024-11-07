@@ -22,7 +22,7 @@ function SearchResultsPage({ isAuthenticated, handleLogout }) {
         {searchResults.map((product) => (
           <div key={product.id} className="product-item">
             <Link to={`/market-homepage/product/${product.id}`} className='result-link'>
-              <img src={'https://192.168.0.194:8000//' + product.image} alt={product.title} />
+              <img src={'https://172.24.210.76:8000//' + product.image} alt={product.title} />
     
               <p className='result-title'>{product.title}</p>
               <h3 className='result-price'>Price: {product.price}</h3>
